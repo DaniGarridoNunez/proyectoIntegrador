@@ -5,11 +5,6 @@
     $query = "SELECT * FROM faqs";
     $resultado = mysqli_query($conexion, $query);
     
-    // hola que tal
-    if($resultado) {
-        echo "hola";
-    }
-    
  ?>
 
 <!DOCTYPE html>
