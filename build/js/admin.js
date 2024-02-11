@@ -208,10 +208,21 @@ function validacionDelAdmin() {
 function validarSelectDelAdmin() {
     const seleccion = formularioDelAdmin.querySelector('#eliminar-admin');
     const seleccionId = formularioDelAdmin.querySelector('#id-admin');
+    const mostrarError = seleccion.parentNode;
+    const mostrarError2 = seleccionId.parentNode;
     
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach(error => {
+        error.remove();
+    });
+
+    const errores2 = mostrarError2.querySelectorAll('.alerta.error');
+    errores2.forEach(error => {
+        error.remove();
+    });
+
 
     if(seleccion.value !== '0' && seleccionId.value.trim() !== '') {
-        const mostrarError = seleccionId.parentNode;
         const elemento = document.createElement('P');
         const mensaje = "ELIGE SOLO UNA OPCIÓN PARA ELIMINAR";
         elemento.textContent = mensaje;
@@ -222,12 +233,11 @@ function validarSelectDelAdmin() {
     }
 
     if(seleccion.value == 0 && seleccionId.value.trim() == '') {
-        const mostrarError = seleccion.parentNode;
         const elemento = document.createElement('P');
         const mensaje = "ELIGE UNA OPCIÓN VALIDA";
         elemento.textContent = mensaje;
         elemento.classList.add('alerta', 'error', 'max-w-50');
-        mostrarError.appendChild(elemento);
+        mostrarError2.appendChild(elemento);
 
         return false;
     }
@@ -240,11 +250,11 @@ function validarSelectDelAdmin() {
 
 
 
-// -------------------------------------------------------------------- FORMULARIO DEL ADMIN ------------------------------------------------------------------
+// -------------------------------------------------------------------- FORMULARIO ADD PROFESIONAL ------------------------------------------------------------------
 
 const formularioAddProfesional = document.querySelector('.formulario-add-profesional');
 
-formularioAddProfesional.addEventListener('click', function(e) {
+formularioAddProfesional.addEventListener('submit', function(e) {
     e.preventDefault();
 
     if(validacionAddProfesional()) {
@@ -281,10 +291,200 @@ formularioAddProfesional.addEventListener('click', function(e) {
         .then(response => {
             if(response.ok) {
                 console.log('Datos envíados corretamente');
+                window.location.href = 'index.php?resultado=3';
+            } else {
+                console.log('Error al enviar los datos');
             }
         })
+        .catch( error => {
+            console.error('Error en la red:', error);
+        })
+    } else {
+        console.log('No ha pasado la validación');
     }
 })
+
+function validacionAddProfesional() {
+    const validarNombre = validarNombreAddProfesional();
+    const validarApellidos = validarApellidosAddProfesional();
+    const validarEmail = validarEmailAddProfesional();
+    const validarPassword = validarPasswordAddProfesional();
+    const validarFecha = validarFechaAddProfesional();
+    const validarDesc = validarDescAddProfesional();
+
+    if (validarNombre && validarApellidos && validarEmail && validarPassword && validarFecha && validarDesc) {
+        return true;
+    }
+
+    return false;
+}
+
+function validarNombreAddProfesional() {
+    const nombre = formularioAddProfesional.querySelector('#nombre-profesional');
+    const mostrarError = nombre.parentNode;
+
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach( error => {
+        error.remove();
+    })
+    
+
+    if(nombre.value.trim() == '') {
+        const elemento = document.createElement('P'); 
+        const mensaje = "ESTE CAMPO ESTÁ VACÍO";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+}
+
+function validarApellidosAddProfesional() {
+    const apellidos = formularioAddProfesional.querySelector('#apellidos-profesional');
+    const mostrarError = apellidos.parentNode;
+
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach( error => {
+        error.remove();
+    })
+
+    if(apellidos.value.trim() == '') {
+        const mostrarError = apellidos.parentNode;
+        const elemento = document.createElement('P'); 
+        const mensaje = "ESTE CAMPO ESTÁ VACÍO";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+}
+
+function validarEmailAddProfesional() {
+    const email = formularioAddProfesional.querySelector('#email-profesional');
+    const mostrarError = email.parentNode;
+
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach( error => {
+        error.remove();
+    })
+
+    if (email.value.trim() == '') {
+        const elemento = document.createElement('P'); 
+        const mensaje = "ESTE CAMPO ESTÁ VACÍO";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+
+    if(!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/.test(email.value)) {
+        const elemento = document.createElement('P'); 
+        const mensaje = "EL EMAIL ES INVÁLIDO";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+}
+
+function validarPasswordAddProfesional() {
+    const password = formularioAddProfesional.querySelector('#password-profesional');
+    const mostrarError = password.parentNode;
+
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach( error => {
+        error.remove();
+    })
+
+    if(password.value.trim() == '') {
+        const elemento = document.createElement('P'); 
+        const mensaje = "ESTE CAMPO ESTÁ VACÍO";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+
+    if(password.value.trim().length < 8 ) {
+        const elemento = document.createElement('P'); 
+        const mensaje = "DEBE TENER AL MENOS 8 CARÁCTERES";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+}
+
+
+function validarFechaAddProfesional() {
+    const fecha = formularioAddProfesional.querySelector('#fecha-nac-profesional');
+    const mostrarError = fecha.parentNode;
+    let fechaActual = new Date();
+    let fechaUsuario = new Date(fecha.value);
+    let fechaMinima = new Date(fechaActual.getFullYear() - 18, fechaActual.getMonth(), fechaActual.getDate());
+
+    console.log(fechaMinima);
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach( error => {
+        error.remove();
+    })
+
+    if(fecha.value === '') {
+        const elemento = document.createElement('P'); 
+        const mensaje = "POR FAVOR, ELIJA UNA FECHA";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+
+    if(fechaUsuario > fechaActual) {
+        const elemento = document.createElement('P'); 
+        const mensaje = "LA FECHA ES MAYOR A LA ACTUALIDAD";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+
+    if(fechaUsuario > fechaMinima ) {
+        const elemento = document.createElement('P'); 
+        const mensaje = "DEBE TENER AL MENOS 18 AÑOS";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+}
+
+function validarDescAddProfesional() {
+    const desc = formularioAddProfesional.querySelector('#desc-profesional');
+    const mostrarError = desc.parentNode;
+
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach( error => {
+        error.remove();
+    })
+
+    if(desc.value.length > 254 ) {
+        const elemento = document.createElement('P'); 
+        const mensaje = "LIMITE DE 254 CARÁCTERES EXCEDIDO";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+}
 
 
 // -------------------------------------------------------------------- FORMULARIO FAQ ------------------------------------------------------------------
@@ -326,242 +526,3 @@ formularioFAQ.addEventListener('submit', function(e) {
         console.error('Error de red:', error);
     });
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function validacion(formulario) {
-    const validarN = validarNombre(formulario);
-    const validarA = validarApellidos(formulario);
-    const validarE = validarEmail(formulario);
-    const validarP = validarPassword(formulario);
-    const validarEsp = validarEspecialidad(formulario);
-    const validarF = validarFecha(formulario);
-    const validarD = validarDescripcion(formulario);
-    const validarS = validarSelect(formulario);
-
-    if(validarN && validarA && validarE && validarP && validarEsp && validarF && validarD && validarS) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validarNombre(formulario) {
-    const nombre = formulario.querySelector('input[class="name"]');
-    
-
-    if(nombre !== null) {
-        const mostrarError = nombre.parentNode;
-
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-            errores.forEach(error => {
-                error.remove();
-            });
-
-        if(nombre.value.trim() == '') {
-            const elemento = document.createElement('P');
-            const mensaje = "ESTE CAMPO ESTA VACÍO";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-    }
-
-    ;
-    // console.log(nombre);
-    return true;
-}
-
-function validarApellidos(formulario) {
-    const apellidos = formulario.querySelector('input[class="ape"]');
-
-    if(apellidos !== null) {
-        const mostrarError = apellidos.parentNode;
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-            errores.forEach(error => {
-                error.remove();
-            });
-
-        if(apellidos.value.trim() == '') {
-            const elemento = document.createElement('P');
-            const mensaje = "ESTE CAMPO ESTA VACÍO";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-    }
-    
-    // console.log(apellidos);
-    return true;
-}
-
-function validarEmail(formulario) {
-    const email = formulario.querySelector('input[type="email"]');
-    
-
-    if(email !== null) {
-        const mostrarError = email.parentNode;
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-        errores.forEach(error => {
-            error.remove();
-        });
-
-        if(email.value.trim() == '') {
-            const elemento = document.createElement('P');
-            const mensaje = "ESTE CAMPO ESTA VACÍO";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-    }
-    // console.log(email);
-    return true;
-}
-
-function validarPassword(formulario) {
-    const password = formulario.querySelector('input[type="password"]');
-
-    if(password !== null) {
-        const mostrarError = password.parentNode;
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-        errores.forEach(error => {
-            error.remove();
-        });
-
-        if(password.value.trim() == '') {
-            const elemento = document.createElement('P');
-            const mensaje = "ESTE CAMPO ESTA VACÍO";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-
-    }
-    // console.log(password);
-    return true;
-}
-
-function validarEspecialidad(formulario) {
-    const especialidad = formulario.querySelector('.especialidad');
-    if(especialidad !== null) {
-
-        // const mostrarError = especialidad.parentNode;
-        // const errores = mostrarError.querySelectorAll('.alerta.error');
-        // errores.forEach(error => {
-        //     error.remove();
-        // });
-        // console.log(especialidad.value);
-        // if(especialidad.value == 1) {
-        //     const elemento = document.createElement('P');
-        //     const mensaje = "ESTE CAMPO ESTA VACÍO";
-        //     elemento.textContent = mensaje;
-        //     elemento.classList.add('alerta', 'error');
-        //     mostrarError.appendChild(elemento);
-
-        //     return false;
-        // }
-    }
-    // console.log(especialidad);
-    return true;
-}
-
-function validarFecha(formulario) {
-    const fecha = formulario.querySelector('input[type="date"]');
-    if(fecha !== null) {
-        const mostrarError = fecha.parentNode;
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-            errores.forEach(error => {
-                error.remove();
-        });
-
-        if(fecha.value == '') {
-            const elemento = document.createElement('P');
-            const mensaje = "ESTE CAMPO ESTA VACÍO";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-    }
-    // console.log(fecha);
-    return true;
-}
-
-function validarDescripcion(formulario) {
-    const descripcion = formulario.querySelector('textarea');
-
-    if(descripcion !== null) {
-        const mostrarError = descripcion.parentNode;
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-            errores.forEach(error => {
-                error.remove();
-        });
-
-        if(descripcion.value.length > 254) {
-            const elemento = document.createElement('P');
-            const mensaje = "HAS SUPERADO LOS CARACTERES MAX. PERMITIDOS (255)";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-    }
-    // console.log(descripcion);
-    return true;
-}
-
-function validarSelect(formulario) {
-    const selectElement = formulario.querySelector('select:not(.especialidad)');
-    // console.log(selectElement);
-    // Verificar si se ha seleccionado una opción válida
-    if (selectElement !== null) {
-        const mostrarError = selectElement.parentNode;
-
-        const errores = mostrarError.querySelectorAll('.alerta.error');
-            errores.forEach(error => {
-                error.remove();
-        });
-
-        if(selectElement.value == 0) {
-            const elemento = document.createElement('P');
-            const mensaje = "POR FAVOR ELIJA UNA OPCIÓN";
-            elemento.textContent = mensaje;
-            elemento.classList.add('alerta', 'error');
-            mostrarError.appendChild(elemento);
-
-            return false;
-        }
-
-    } else {
-    }
-    return true;
-}
