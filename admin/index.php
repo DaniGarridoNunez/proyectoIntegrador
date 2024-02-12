@@ -160,8 +160,8 @@
                             <div>
                                 <label for="especialidad-profesional">Especialidad:</label>
                                 <select class="especialidad" name="especialidad-profesional" id="especialidad-profesional">
-                                    <option value="1">Nutricionista</option>
-                                    <option value="2">Psicólogo</option>
+                                    <option value="nutricionista">Nutricionista</option>
+                                    <option value="psicologo">Psicólogo</option>
                                 </select>
                             </div>
 
