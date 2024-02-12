@@ -16,6 +16,9 @@
     $queryAdmin = "SELECT * FROM usuarios WHERE rol = 'admin'";
     $resultadoAdmin = mysqli_query($conexion, $queryAdmin);
     
+    $queryProfesional = "SELECT * FROM usuarios WHERE rol = 'profesional'";
+    $resultadoProfesional = mysqli_query($conexion, $queryProfesional);
+    
  ?>
 
 <!DOCTYPE html>
@@ -198,10 +201,9 @@
                             <label for="eliminar-profesional">Elegir profesional a eliminar</label>
                             <select name="eliminar-profesional" id="eliminar-profesional">
                                 <option value="0" selected disabled>--Elija a eliminar --</option>
-                                <option value="1">Jorge Gimenez</option>
-                                <option value="2">Carlos Mengual</option>
-                                <option value="3">Sergio Rastrel</option>
-                                <option value="4">Dafne Serguei</option>
+                                <?php while($profesional = mysqli_fetch_assoc($resultadoProfesional)): ?>
+                                    <option value="<?php echo $profesional['id'] ?>"> <?php echo $profesional['correo'] ?> </option>
+                                <?php endwhile; ?>
                             </select>
                         </div>
                         <div>
