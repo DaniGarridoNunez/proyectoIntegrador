@@ -265,7 +265,7 @@ formularioAddProfesional.addEventListener('submit', function(e) {
         const especialidad = formularioAddProfesional.querySelector('#especialidad-profesional').value;
         const fecha = formularioAddProfesional.querySelector('#fecha-nac-profesional').value;
 
-        const desc = formularioAddProfesional.querySelector('#desc-profesional');
+        let desc = formularioAddProfesional.querySelector('#desc-profesional');
 
         if(desc !== null) {
             desc = desc.value;
@@ -311,6 +311,12 @@ function validacionAddProfesional() {
     const validarPassword = validarPasswordAddProfesional();
     const validarFecha = validarFechaAddProfesional();
     const validarDesc = validarDescAddProfesional();
+    console.log(validarNombre);
+    console.log(validarApellidos);
+    console.log(validarEmail);
+    console.log(validarPassword);
+    console.log(validarFecha);
+    console.log(validarDesc);
 
     if (validarNombre && validarApellidos && validarEmail && validarPassword && validarFecha && validarDesc) {
         return true;
@@ -321,6 +327,7 @@ function validacionAddProfesional() {
 
 function validarNombreAddProfesional() {
     const nombre = formularioAddProfesional.querySelector('#nombre-profesional');
+    console.log(nombre);
     const mostrarError = nombre.parentNode;
 
     const errores = mostrarError.querySelectorAll('.alerta.error');
@@ -338,10 +345,13 @@ function validarNombreAddProfesional() {
 
         return false;
     }
+
+    return true;
 }
 
 function validarApellidosAddProfesional() {
     const apellidos = formularioAddProfesional.querySelector('#apellidos-profesional');
+    console.log(apellidos);
     const mostrarError = apellidos.parentNode;
 
     const errores = mostrarError.querySelectorAll('.alerta.error');
@@ -359,10 +369,12 @@ function validarApellidosAddProfesional() {
 
         return false;
     }
+    return true;
 }
 
 function validarEmailAddProfesional() {
     const email = formularioAddProfesional.querySelector('#email-profesional');
+    console.log(email);
     const mostrarError = email.parentNode;
 
     const errores = mostrarError.querySelectorAll('.alerta.error');
@@ -389,10 +401,13 @@ function validarEmailAddProfesional() {
 
         return false;
     }
+
+    return true;
 }
 
 function validarPasswordAddProfesional() {
     const password = formularioAddProfesional.querySelector('#password-profesional');
+    console.log(password);
     const mostrarError = password.parentNode;
 
     const errores = mostrarError.querySelectorAll('.alerta.error');
@@ -419,17 +434,19 @@ function validarPasswordAddProfesional() {
 
         return false;
     }
+
+    return true;
 }
 
 
 function validarFechaAddProfesional() {
     const fecha = formularioAddProfesional.querySelector('#fecha-nac-profesional');
+    console.log(fecha);
     const mostrarError = fecha.parentNode;
     let fechaActual = new Date();
     let fechaUsuario = new Date(fecha.value);
     let fechaMinima = new Date(fechaActual.getFullYear() - 18, fechaActual.getMonth(), fechaActual.getDate());
 
-    console.log(fechaMinima);
     const errores = mostrarError.querySelectorAll('.alerta.error');
     errores.forEach( error => {
         error.remove();
@@ -464,10 +481,13 @@ function validarFechaAddProfesional() {
 
         return false;
     }
+
+    return true;
 }
 
 function validarDescAddProfesional() {
     const desc = formularioAddProfesional.querySelector('#desc-profesional');
+    console.log(desc);
     const mostrarError = desc.parentNode;
 
     const errores = mostrarError.querySelectorAll('.alerta.error');
@@ -484,6 +504,8 @@ function validarDescAddProfesional() {
 
         return false;
     }
+
+    return true;
 }
 
 

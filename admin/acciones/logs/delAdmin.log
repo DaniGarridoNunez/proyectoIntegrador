@@ -1,9 +1,0 @@
-array(2) {
-  ["admin"]=>
-  string(1) "0"
-  ["adminId"]=>
-  string(2) "34"
-}
-Datos recibidos:
-Admin: 0
-AdminId: 34
