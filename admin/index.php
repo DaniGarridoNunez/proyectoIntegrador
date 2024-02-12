@@ -78,7 +78,7 @@
         </aside>
         <div class="main-content">
             <div class="administrador forms">
-                <form class="formulario-add-admin" action="./acciones/addAdmin.php" method="POST">
+                <form class="formulario-add-admin" method="POST">
                     <fieldset>
 
                         <legend>Añadir Administrador</legend>
@@ -103,7 +103,7 @@
                 </form>
 
                 <!-- ELIMINAR ADMINISTRADOR -->
-                <form class="formulario-del-admin"  action="./acciones/delAdmin.php" method="POST" style="margin-top: 2rem;">
+                <form class="formulario-del-admin" method="POST" style="margin-top: 2rem;">
                     <fieldset>
 
                         <legend>Eliminar Administrador</legend>
@@ -132,7 +132,7 @@
             </div> <!-- .administrador -->
 
             <div class="profesional forms oculto">
-                <form class="formulario-add-profesional" action="addUser.php" method="POST">
+                <form class="formulario-add-profesional" method="POST">
                     <fieldset>
                         <legend>Añadir Profesional</legend>
                         
@@ -192,7 +192,7 @@
                 </form>
 
                 <!-- ELIMINAR PROFESIONAL -->
-                <form class="formulario"  action="" method="POST" style="margin-top: 2rem;">
+                <form class="formulario-del-profesional" method="POST" style="margin-top: 2rem;">
                     <fieldset>
 
                         <legend>Eliminar Profesional</legend>
