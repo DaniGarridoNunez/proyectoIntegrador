@@ -7,7 +7,7 @@
     // echo '</pre>';
 
     if(isset($_GET['registro']) && $_GET['registro'] == 1) { ?>
-        <div class="modal-registro-exitoso">
+        <div class="modal-registro-exitoso" style="z-index: 2;">
         <div class="contenedor">
             <div class="contenido-modal-registro">
                 <img src="build/img/registro-exito.png" alt="icono exito">
@@ -20,7 +20,7 @@
     </div>
 <?php }
     $registro_modal = $_GET['registro'] ?? null;
-    echo $registro_modal;
+    // echo $registro_modal;
 
  ?>
 

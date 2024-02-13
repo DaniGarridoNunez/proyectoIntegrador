@@ -1,73 +1,6 @@
 <?php 
     require 'includes/app.php'; 
 
-    $errores = [];
-
-    if($_SERVER['REQUEST_METHOD'] === "POST") {
-        $email = mysqli_real_escape_string($conexion, $_POST['email']);
-        $password = mysqli_real_escape_string($conexion, $_POST['password']);
-
-        // Consultar si el email ya esta registrado!
-        $sql = "SELECT * FROM usuarios WHERE correo = '$email'";
-        $resultado = mysqli_query($conexion, $sql);
-
-        if( mysqli_num_rows($resultado) > 0 ) {
-            $errores[] = "EL CORREO YA ESTA EN USO";
-        } else {
-            // ejecutar este código en caso de que no exista ya el correo
-            if(isset($email) && isset($password)) {
-                // hasheamos la password para que el dueño de la BD no pueda ver las claves de los usuarios
-                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-                
-                $sql = "INSERT INTO usuarios(correo, password, rol) VALUES ('$email', '$passwordHash', 'paciente')";
-                $resultado = mysqli_query($conexion, $sql);
-    
-                if($resultado) {
-                    
-                    if( mysqli_affected_rows($conexion) > 0 ) {
-                         // Recogemos todos los datos para iniciar la sesión
-                        $sql = "SELECT * FROM usuarios WHERE correo = '$email' ";
-                        $resultado = mysqli_query($conexion, $sql);
-
-                        if($resultado) {
-                            $usuario = mysqli_fetch_assoc($resultado);
-            
-                            // Verificamos la contraseña
-                            $auth = password_verify($password, $usuario['password']);
-            
-                            // En caso de que la contraseña sea correcta, inciamos sesión
-                            if($auth) {
-            
-                                session_start();
-                                $_SESSION['id'] = $usuario['id'];
-                                $_SESSION['usuario'] = $usuario['correo'];
-                                $_SESSION['rol'] = $usuario['rol'];
-                                header('Location: /proyectoIntegrador?registro=1');
-
-                            }
-            
-                        }
-
-                    } else {
-                        echo "No se pudo completar el registro :(";
-                    }
-    
-                // else del if($resultado)
-                } else {
-                    echo "Error en la consulta: " . mysqli_error($conexion);
-                }
-
-            // else del if(isset($email) && isset($password))
-            } else {
-                echo "Los datos de correo electrónico y contraseña no están seteados";
-            }
-        }
-
-
-        mysqli_close($conexion);
-    }
-
-
  ?>
 
 <!DOCTYPE html>
@@ -108,11 +41,9 @@
                 <h3>Bienvenido a Psycologix</h3>
                 <p>Ingresa tus datos para crear una cuenta</p>
 
-                <?php foreach($errores as $error): ?>
-                    <div class="alerta error">
-                        <?php echo $error; ?>
-                    </div>
-                <?php endforeach; ?>
+                <div class="errores-registro">
+                    
+                </div>
 
                 <form class="login-formulario" method="POST">
 
