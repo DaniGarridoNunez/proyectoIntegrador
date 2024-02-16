@@ -42,8 +42,49 @@ document.addEventListener("DOMContentLoaded", function() {
             const email = emailInput.value;
             const password = passwordInput.value;
 
-            fetch('url')
-        }
+            const datos = {
+                email: email,
+                password: password
+            }
+
+            fetch('/proyectoIntegrador/build/php/registroFetch.php', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(datos)
+            })
+            .then(response => {
+                if(response.ok) {
+
+                    console.log(response);
+                    return response.json(); // Convertir la respuesta a JSON
+                } else {
+                    // return response.json(); // Convertir la respuesta a JSON
+
+                    throw new Error('Error en la respuesta del servidor');
+                }
+            })
+            .then(data => {
+                console.log(data);
+                if (data.registroExitoso) {
+                    console.log('Datos enviados correctamente');
+                    window.location.href = '/proyectoIntegrador?registro=1';
+                } else {
+                    console.error('Fallo en el registro:', data.errores);
+                    const divErrores = document.querySelector('.errores-registro');
+                    const div = document.createElement('DIV');
+                    div.classList.add('alerta', 'error');
+                    const mensaje = document.createTextNode(data.errores);
+                    div.appendChild(mensaje);
+                    divErrores.appendChild(div);
+                }
+                
+            })
+            .catch(error => {
+                console.error('Fallo enviando los datos:', error);
+            });
+        }     
     });
 
     function validarCb() {

@@ -511,6 +511,107 @@ function validarDescAddProfesional() {
 
 // -------------------------------------------------------------------- FORMULARIO FAQ ------------------------------------------------------------------
 
+const formularioDelProfesional = document.querySelector('.formulario-del-profesional');
+
+formularioDelProfesional.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if(validacionDelProfesional()) {
+        let profesional = formularioDelProfesional.querySelector('#eliminar-profesional');
+        let profesionalId = formularioDelProfesional.querySelector('#id-profesional');
+
+        if(profesional !== null) {
+            profesional = profesional.value;
+        }
+
+        if(profesionalId !== null) {
+            profesionalId = profesionalId.value;
+        }
+
+        const datos = {
+            profesional: profesional,
+            profesionalId: profesionalId
+        }
+
+        fetch('/proyectoIntegrador/admin/acciones/delProfesional.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
+        })
+        .then(response => {
+            if(response.ok) {
+                console.log('Datos envíados correctamente');
+                window.location.href = 'index.php?resultado=4';
+            } else {
+                console.log('Error al enviar los datos');
+            }
+        })
+        .catch(error => {
+            console.error('Error en la red:', error);
+        })
+    } else {
+        console.log('No ha pasado la validación');
+    }
+
+})
+
+function validacionDelProfesional() {
+    const validar = validarSelectDelProfesional();
+
+    if(validar) {
+        return true;
+    }
+
+    return false;
+}
+
+function validarSelectDelProfesional() {
+    const seleccion = formularioDelProfesional.querySelector('#eliminar-profesional');
+    const seleccionId = formularioDelProfesional.querySelector('#id-profesional');
+    const mostrarError = seleccion.parentNode;
+    const mostrarError2 = seleccionId.parentNode;
+    
+    const errores = mostrarError.querySelectorAll('.alerta.error');
+    errores.forEach(error => {
+        error.remove();
+    });
+
+    const errores2 = mostrarError2.querySelectorAll('.alerta.error');
+    errores2.forEach(error => {
+        error.remove();
+    });
+
+
+    if(seleccion.value !== '0' && seleccionId.value.trim() !== '') {
+        const elemento = document.createElement('P');
+        const mensaje = "ELIGE SOLO UNA OPCIÓN PARA ELIMINAR";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError.appendChild(elemento);
+
+        return false;
+    }
+
+    if(seleccion.value == 0 && seleccionId.value.trim() == '') {
+        const elemento = document.createElement('P');
+        const mensaje = "ELIGE UNA OPCIÓN VALIDA";
+        elemento.textContent = mensaje;
+        elemento.classList.add('alerta', 'error', 'max-w-50');
+        mostrarError2.appendChild(elemento);
+
+        return false;
+    }
+
+
+
+    return true;
+}
+
+
+// -------------------------------------------------------------------- FORMULARIO FAQ ------------------------------------------------------------------
+
 // Obtener el formulario de FAQ
 const formularioFAQ = document.querySelector('.faq.forms form');
 
