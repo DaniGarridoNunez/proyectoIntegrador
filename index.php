@@ -10,7 +10,14 @@
         <div class="modal-registro-exitoso" style="z-index: 2;">
         <div class="contenedor">
             <div class="contenido-modal-registro">
-                <img src="build/img/registro-exito.png" alt="icono exito">
+            <lord-icon
+    src="https://cdn.lordicon.com/oqdmuxru.json"
+    trigger="in"
+    delay="400"
+    state="in-check"
+    colors="primary:#16c72e"
+    style="width:150px;height:150px">
+</lord-icon>
                 <h2>Registro exitoso!</h2>
                 <p>¡Te damos la bienvenida a nuestro sitio!</p>
                 <p>¡Gracias por unirte a Psycologix!</p>
@@ -35,13 +42,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Ramabhadra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="build/css/app.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
 </head>
 <body>
     <div style="min-height: 100vh; display: flex; flex-direction: column;">
     
     <?php include 'includes/templates/header.php' ?>
         <div style="flex-grow: 1; display: flex; position:relative;">
-        <video src="./build/video/fondo.mp4" class="video-cabecera" autoplay loop muted></video>
+        <div class="video-cabecera">
+            <video src="./build/video/fondo.mp4" class="video-header" autoplay loop muted></video>
+        </div>
             <div class="contenedor" style="display: flex;">
                 <div class="contenido-main">
                     <div class="izquierda-main">
