@@ -1710,7 +1710,7 @@ ul.sub-menu li > div.flex > img {
 .pedir-cita .contenedor-form {
   width: 100%;
   height: 100%;
-  padding: 4rem;
+  padding: 0rem 4rem;
 }
 .pedir-cita .contenedor-form .form {
   width: 100%;
@@ -1773,4 +1773,14 @@ ul.sub-menu li > div.flex > img {
 .pedir-cita .current-step {
   background-color: #ffffff; /* Fondo blanco */
   color: black;
+}
+
+.card img {
+  height: auto!important;
+  max-height: 30rem;
+}
+
+.card h3 {
+  margin: 0;
+  margin-left: 1rem;
 }

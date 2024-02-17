@@ -127,6 +127,7 @@
 
 <?php include 'includes/templates/footer.php' ?>
     
+    <script src="build/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="build/js/pedir-cita.js"></script>
 </body>
