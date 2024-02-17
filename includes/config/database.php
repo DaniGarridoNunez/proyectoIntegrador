@@ -47,6 +47,7 @@ function getConexion() {
                 especialidad VARCHAR(255) NULL,
                 descripcion VARCHAR(255) NULL,
                 fecha_nac DATE NULL,
+                foto VARCHAR(200) NULL,
                 rol VARCHAR(30) NOT NULL
             );
     
@@ -94,18 +95,18 @@ function getConexion() {
                 $sqlInserts = "
                 -- USUARIOS
                     -- PROFESIONALES
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Luis', 'Jerez', 'luisjerez@gmail.com', '1234', 'nutricionista', 'Cinco años de experiencia licenciado en la Universidad Europea de Madrid', '2000-10-23', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Eric', 'Hernandez', 'erichernandez@gmail.com', '1234', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1980-03-15', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Angel', 'Perez', 'angelperez@gmail.com', '1234', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1992-07-30', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Mario', 'Rodriguez', 'mariorodriguez@gmail.com', '1234', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1975-01-09', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1997-08-11', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Luis', 'Jerez', 'luisjerez@gmail.com', '1234', 'nutricionista', 'Cinco años de experiencia licenciado en la Universidad Europea de Madrid', '2000-10-23', 'pruebasProfesional2.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Eric', 'Hernandez', 'erichernandez@gmail.com', '1234', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1980-03-15', 'pruebasProfesional2.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Angel', 'Perez', 'angelperez@gmail.com', '1234', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1992-07-30', 'pruebasProfesional2.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Mario', 'Rodriguez', 'mariorodriguez@gmail.com', '1234', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1975-01-09', 'pruebasProfesional2.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', 'pruebasProfesional2.jpg', '1997-08-11', 'profesional');
                     
                     -- PACIENTES
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Fernando', 'Alonso', 'fernandoalonso@gmail.com', '1234', NULL, NULL, '2003-02-11', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '2001-01-23', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '2004-08-12', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '1990-09-08', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '1999-12-30', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Fernando', 'Alonso', 'fernandoalonso@gmail.com', '1234', NULL, NULL, '2003-02-11', 'pruebas.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '2001-01-23', 'pruebas.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '2004-08-12', 'pruebas.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '1990-09-08', 'pruebas.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '1234', NULL, NULL, '1999-12-30', 'pruebas.jpg', 'paciente');
                     
                     -- ADMINISTRADORES
                 INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, rol) VALUES (NULL, NULL, 'dani@admin.com', '1234', NULL, NULL, NULL, 'admin');

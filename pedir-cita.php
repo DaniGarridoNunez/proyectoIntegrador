@@ -91,13 +91,13 @@
                                     <h1>Elige un profesional</h1>
                                     <div class="form-imgs">
                                         <div class="card">
-                                            <img src="build/img/formulario-profesional.png" alt="imagen opcion nutricionista">
+                                            <img src="fotoperfil/pruebas.jpg" alt="imagen opcion nutricionista">
                                             <h3>Jaime Lopez</h3>
                                             <p>Soy nutricionista, me encanta nutricionar, la pasión por mi trabajo es god chaval</p>
                                         </div>
     
                                         <div class="card">
-                                            <img src="build/img/formulario-profesional.png" alt="imagen opcion nutricionista">
+                                            <img src="fotoperfil/pruebas.jpg" alt="imagen opcion nutricionista">
                                             <h3>Sergio Perez</h3>
                                             <p>Soy psicólogo, me encanta psicologear, la pasión por mi trabajo es god chaval</p>
                                         </div>
