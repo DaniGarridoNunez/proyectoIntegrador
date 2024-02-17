@@ -1,3 +1,11 @@
+<?php 
+    require 'includes/app.php'; 
+    session_start();
+
+     $query = "SELECT * FROM usuarios WHERE rol = 'profesional' LIMIT 3";
+     $resultadoProfesional = mysqli_query($conexion, $query);
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,19 +97,19 @@
     
                                 <div class="form paso3">
                                     <h1>Elige un profesional</h1>
+                                    
                                     <div class="form-imgs">
-                                        <div class="card">
-                                            <img src="fotoperfil/pruebas.jpg" alt="imagen opcion nutricionista">
-                                            <h3>Jaime Lopez</h3>
-                                            <p>Soy nutricionista, me encanta nutricionar, la pasión por mi trabajo es god chaval</p>
-                                        </div>
-    
-                                        <div class="card">
-                                            <img src="fotoperfil/pruebas.jpg" alt="imagen opcion nutricionista">
-                                            <h3>Sergio Perez</h3>
-                                            <p>Soy psicólogo, me encanta psicologear, la pasión por mi trabajo es god chaval</p>
-                                        </div>
+
+                                        <?php while($profesional = mysqli_fetch_assoc($resultadoProfesional)): ?>
+                                            <div class="card">
+                                                <img src="fotoperfil/<?php echo $profesional['foto']; ?>" alt="imagen opcion <?php echo $profesional['especialidad'] ?>" data-value="<?php echo $profesional['id']; ?>">
+                                                <h3> <?php echo $profesional['nombre'] . ' ' . $profesional['apellido']; ?> </h3>
+                                                <p> <?php echo $profesional['descripcion']; ?> </p>
+                                            </div>
+                                        <?php endwhile; ?>
+                                        
                                     </div> <!-- .form-imgs -->
+
                                     <button type="button" id="anteriorBtn">Anterior</button>
                                 </div> <!-- .paso3 -->
                                 

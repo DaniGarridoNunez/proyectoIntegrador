@@ -88,12 +88,14 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
 
     const especialidad = valoresSeleccionados[0];
     const modalidad = valoresSeleccionados[1];
+    const profesional = valoresSeleccionados[2];
     const fecha = document.querySelector('#fecha');
 
     // Aquí puedes acceder a los valores seleccionados en valoresSeleccionados y enviarlos al servidor
     console.log('Datos seleccionados:');
     console.log(especialidad);
     console.log(modalidad);
+    console.log(profesional);
     console.log(fecha.value);
 
     // Lógica para enviar los datos al servidor
