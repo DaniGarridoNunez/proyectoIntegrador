@@ -46,7 +46,7 @@ function getConexion() {
                 password VARCHAR(255) NOT NULL,
                 especialidad VARCHAR(255) NULL,
                 descripcion VARCHAR(255) NULL,
-                fecha_nac DATE NULL,
+                fecha_nac DATETIME NULL,
                 foto VARCHAR(200) NULL,
                 rol VARCHAR(30) NOT NULL
             );
