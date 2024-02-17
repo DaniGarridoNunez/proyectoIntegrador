@@ -1,7 +1,7 @@
 let fechaVar = flatpickr("#fecha", {
     // Configuración opcional de Flatpickr
     minDate: "today", // Fecha mínima permitida (hoy)
-    maxDate: new Date().fp_incr(30),
+    maxDate: new Date().fp_incr(60), // La fecha máxima para pedir cita es 2 meses
     defaultDate: "today", // Fecha predeterminada (hoy)
     // inline: true,
     enableTime: true,
