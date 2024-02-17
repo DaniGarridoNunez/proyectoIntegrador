@@ -2,6 +2,10 @@
     require 'includes/app.php'; 
     session_start();
 
+    if(!$_SESSION['login']) {
+        header('Location: /proyectoIntegrador/login.php');
+    }
+
      $query = "SELECT * FROM usuarios WHERE rol = 'profesional'";
      $resultadoProfesional = mysqli_query($conexion, $query);
  ?>
