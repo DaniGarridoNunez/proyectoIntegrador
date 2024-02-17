@@ -58,7 +58,7 @@ function getConexion() {
                 FOREIGN KEY (id_profesional) REFERENCES usuarios(id),
                 FOREIGN KEY (id_paciente) REFERENCES usuarios(id),
                 tipo_cita VARCHAR(255) NOT NULL,
-                dia_cita DATE NOT NULL
+                dia_cita DATETIME NOT NULL
             );
             
     
