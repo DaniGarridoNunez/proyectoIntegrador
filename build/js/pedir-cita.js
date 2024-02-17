@@ -80,6 +80,33 @@ document.addEventListener("DOMContentLoaded", function () {
             nextStep();
         });
     });
+
+
+    /*--------------------------------------- SLIDER PROFESIONALES ----------------------------------------*/
+    console.log('hola');
+    const reviews = document.querySelector('.form-imgs.cards');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const reviewWidth = 720;
+    let currentIndex2 = 0;
+
+    // Function to move reviews to the left
+    function moveLeft() {
+        currentIndex2 = Math.max(currentIndex2 - 1, 0);
+        reviews.style.transform = `translateX(-${currentIndex2 * reviewWidth}px)`;
+    }
+
+    // Function to move reviews to the right
+    function moveRight() {
+        const maxIndex = reviews.children.length - 1;
+        currentIndex2 = Math.min(currentIndex2 + 1, maxIndex);
+        reviews.style.transform = `translateX(-${currentIndex2 * reviewWidth}px)`;
+    }
+
+    // Event listeners for navigation buttons
+    prevBtn.addEventListener('click', moveLeft);
+    nextBtn.addEventListener('click', moveRight);
+
 })
 
 // Event listener para el envío del formulario
@@ -96,7 +123,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
     console.log(especialidad);
     console.log(modalidad);
     console.log(profesional);
-    console.log(fecha.value);
+    console.log(fecha.value.length);
 
     // Lógica para enviar los datos al servidor
 });

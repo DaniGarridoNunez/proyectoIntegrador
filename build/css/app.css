@@ -1740,21 +1740,52 @@ ul.sub-menu li > div.flex > img {
 .pedir-cita .contenedor-form .form.active {
   display: block;
 }
+
+.pedir-cita .contenedor-form .paso3 {
+  overflow: hidden;
+  position: relative;
+  width: 700px;
+  min-height: 100%;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: -1rem;
+}
+
+.next-btn {
+    right: -1rem;
+}
+
+
 .pedir-cita .form-imgs {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  transition: transform 0.5s ease;
 }
 .pedir-cita .form-imgs div {
   overflow: hidden;
   border-radius: 10px;
   object-fit: cover;
-  max-width: 35rem;
+  width: 35rem;
 }
 .pedir-cita .form-imgs .card {
   background-color: white;
   border: 1px solid black;
+  flex: 0 0 auto;
 }
 .pedir-cita .form-imgs .card p {
   margin-left: 1rem;

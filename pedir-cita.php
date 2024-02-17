@@ -2,7 +2,7 @@
     require 'includes/app.php'; 
     session_start();
 
-     $query = "SELECT * FROM usuarios WHERE rol = 'profesional' LIMIT 3";
+     $query = "SELECT * FROM usuarios WHERE rol = 'profesional'";
      $resultadoProfesional = mysqli_query($conexion, $query);
  ?>
 
@@ -62,7 +62,7 @@
                     </aside>
                     
                     <article>
-                        <form id="miFormulario" method="POST">
+                        <form id="miFormulario" method="POST" style="height: 100%;">
                             <div class="contenedor-form">
                                 <div class="form paso1 active">
                                     <h1>Elige el tipo de cita</h1>
@@ -98,7 +98,7 @@
                                 <div class="form paso3">
                                     <h1>Elige un profesional</h1>
                                     
-                                    <div class="form-imgs">
+                                    <div class="form-imgs cards">
 
                                         <?php while($profesional = mysqli_fetch_assoc($resultadoProfesional)): ?>
                                             <div class="card">
@@ -107,8 +107,12 @@
                                                 <p> <?php echo $profesional['descripcion']; ?> </p>
                                             </div>
                                         <?php endwhile; ?>
+
                                         
                                     </div> <!-- .form-imgs -->
+                                        
+                                    <button type="button" class="prev-btn">&lt;</button>
+                                    <button type="button" class="next-btn">&gt;</button>
 
                                     <button type="button" id="anteriorBtn">Anterior</button>
                                 </div> <!-- .paso3 -->
