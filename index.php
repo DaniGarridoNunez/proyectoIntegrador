@@ -31,11 +31,11 @@
         <div class="contenedor">
             <div class="contenido-modal-registro">
                 <lord-icon
-                    src="https://cdn.lordicon.com/oqdmuxru.json"
+                    src="https://cdn.lordicon.com/abfverha.json"
                     trigger="in"
-                    delay="400"
-                    state="in-check"
-                    colors="primary:#16c72e"
+                    delay="200"
+                    state="in-calendar"
+                    colors="primary:#000000"
                     style="width:150px;height:150px">
                 </lord-icon>
                 <h2>Cita pedida!</h2>
