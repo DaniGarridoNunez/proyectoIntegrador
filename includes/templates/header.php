@@ -50,7 +50,7 @@
                                 <li>
                                     <div class="flex">
                                         <img src="/proyectoIntegrador/build/img/pedir-cita.png" alt="logo asesorias">
-                                        <a href="/proyectoIntegrador/reservarCita.php">Reservar Cita</a>
+                                        <a href="/proyectoIntegrador/pedir-cita.php">Reservar Cita</a>
                                     </div>
                                     <p class="sub-menu-texto">Pide cita ahora</p>
                                 </li>
@@ -262,7 +262,7 @@
                                 <li>
                                     <div class="flex">
                                         <img src="/proyectoIntegrador/build/img/pedir-cita.png" alt="logo asesorias">
-                                        <a href="/proyectoIntegrador/reservarCita.php">Reservar Cita</a>
+                                        <a href="/proyectoIntegrador/pedir-cita.php">Reservar Cita</a>
                                     </div>
                                     <p class="sub-menu-texto">Pide cita ahora</p>
                                 </li>

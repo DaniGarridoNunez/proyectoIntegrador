@@ -6,18 +6,18 @@
     // var_dump($_SESSION);
     // echo '</pre>';
 
-    if(isset($_GET['registro']) && $_GET['registro'] == 1) { ?>
+    if(isset($_GET['registro']) && $_GET['registro'] == 1): ?>
         <div class="modal-registro-exitoso" style="z-index: 2;">
         <div class="contenedor">
             <div class="contenido-modal-registro">
-            <lord-icon
-    src="https://cdn.lordicon.com/oqdmuxru.json"
-    trigger="in"
-    delay="400"
-    state="in-check"
-    colors="primary:#16c72e"
-    style="width:150px;height:150px">
-</lord-icon>
+                <lord-icon
+                    src="https://cdn.lordicon.com/oqdmuxru.json"
+                    trigger="in"
+                    delay="400"
+                    state="in-check"
+                    colors="primary:#16c72e"
+                    style="width:150px;height:150px">
+                </lord-icon>
                 <h2>Registro exitoso!</h2>
                 <p>¡Te damos la bienvenida a nuestro sitio!</p>
                 <p>¡Gracias por unirte a Psycologix!</p>
@@ -25,11 +25,28 @@
             </div>
         </div>
     </div>
-<?php }
-    $registro_modal = $_GET['registro'] ?? null;
-    // echo $registro_modal;
+<?php endif; ?>
+<?php if(isset($_GET['cita']) && $_GET['cita'] == 1): ?>
+    <div class="modal-registro-exitoso" style="z-index: 2;">
+        <div class="contenedor">
+            <div class="contenido-modal-registro">
+                <lord-icon
+                    src="https://cdn.lordicon.com/abfverha.json"
+                    trigger="in"
+                    delay="200"
+                    state="in-calendar"
+                    colors="primary:#000000"
+                    style="width:150px;height:150px">
+                </lord-icon>
+                <h2>Cita pedida!</h2>
+                <p>¡Muchas gracias, la cita ha sido confirmada!</p>
+                <p>¡No olvides ser puntual!</p>
+                <button class="btn-cerrar">Cerrar</button>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 
- ?>
 
 <!DOCTYPE html>
 <html lang="en">
