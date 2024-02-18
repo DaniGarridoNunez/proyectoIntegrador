@@ -125,5 +125,46 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
     console.log(profesional);
     console.log(fecha.value.length);
 
+    if(fecha.value.length > 1) {
+
+        const data = {
+            especialidad: especialidad,
+            modalidad: modalidad,
+            profesional: profesional,
+            fecha: fecha.value
+        }
+
+        fetch('/proyectoIntegrador/build/php/pedirCita-fetch.php', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if(response.ok) {
+                console.log('Datos envíados');
+                return response.json();
+            } else {
+                throw new Error('Error en la respuesta del servidor');
+            }
+        })
+        .then(data => {
+            if (data.registroExitoso) {
+                console.log('Datos enviados correctamente');
+                window.location.href = '/proyectoIntegrador?cita=1';
+            } else {
+                
+            }
+        })
+        .catch(error => {
+            console.error('Fallo enviando los datos:', error);
+        });
+
+
+    } else {
+
+    }
+
     // Lógica para enviar los datos al servidor
 });
