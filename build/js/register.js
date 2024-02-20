@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const ojo = document.querySelector('.ver-contraseña');
     ojo.addEventListener('click', verContrasena);
 
+    // Función ver contraseña
     function verContrasena() {
 
         if(passwordInput.type == 'password') {
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
-
+    // Variables
     const formulario = document.querySelector('.login-formulario');
     const emailInput = document.querySelector('#emailInput');
     const passwordInput = document.querySelector('#passwordInput');
@@ -24,14 +25,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const mostrarErrorPass = document.querySelector('.contenedor-pass');
     const mostrarErrorCb = document.querySelector('.login-terms');
 
+    // Event listener para el campo email
     emailInput.addEventListener('blur', function() {
         validarMail();
     });
 
+    // Event listener para el campo password
     passwordInput.addEventListener('blur', function() {
         validarPass();
     });
 
+    // Event listener para cuando se le da al boton submit
     formulario.addEventListener('submit', function(event) {
         event.preventDefault();
         const errorEmail = validarMail();
@@ -42,16 +46,19 @@ document.addEventListener("DOMContentLoaded", function() {
             const email = emailInput.value;
             const password = passwordInput.value;
 
+            // Almacenamos los datos en un objeto
             const datos = {
                 email: email,
                 password: password
             }
 
+            // Realizamos el fetch
             fetch('/proyectoIntegrador/build/php/registroFetch.php', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
+                // Pasamos en el body el objeto con los datos en formato JSON
                 body: JSON.stringify(datos)
             })
             .then(response => {
@@ -60,17 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log(response);
                     return response.json(); // Convertir la respuesta a JSON
                 } else {
-                    // return response.json(); // Convertir la respuesta a JSON
 
                     throw new Error('Error en la respuesta del servidor');
                 }
             })
             .then(data => {
-                console.log(data);
+                // Si el registro es exitoso:
                 if (data.registroExitoso) {
                     console.log('Datos enviados correctamente');
+                    // Redirijimos al usuario a la página home con una variable en la URL para que muestre una ventana modal confirmando el registro
                     window.location.href = '/proyectoIntegrador?registro=1';
                 } else {
+                    // Si el registro no es exitoso por algún motivo, mostrará el error devuelto por el archivo PHP que maneja el registro
                     console.error('Fallo en el registro:', data.errores);
                     const divErrores = document.querySelector('.errores-registro');
                     const div = document.createElement('DIV');
@@ -86,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }     
     });
-
+    
     function validarCb() {
         // Verificar si el checkbox está marcado
         const checkbox = document.querySelector('#cb-terminos');
