@@ -4,18 +4,19 @@ let fechaVar = flatpickr("#fecha", {
     maxDate: new Date().fp_incr(60), // La fecha máxima para pedir cita es 2 meses
     defaultDate: "today", // Fecha predeterminada (hoy)
     // inline: true,
-    enableTime: true,
+    enableTime: true,   // Sirve para activar las opciones de fecha y hora
     dateFormat: "Y-m-d H:i",
-    minTime: "16:00",
-    maxTime: "22:30",
-    time_24hr: true,
-    disable: [
+    minTime: "16:00",   // Hora mínima
+    maxTime: "22:30",   // Hora máxima
+    time_24hr: true,    // Formato 24h en vez de AM y PM
+    disable: [  // Deshabilitamos los sabados y domingos
         function(date) {
             return (date.getDay() === 0 || date.getDay() === 6);
         }
     ]
 })
 
+// Array para almacenar la selección del usuario
 let valoresSeleccionados = {};
 
 
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener para los botones "Anterior"
     previousButtons.forEach((button) => {
         button.addEventListener("click", () => {
+            // Ejecutamos la función volver atrás
             previousStep();
         });
     });
@@ -83,27 +85,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /*--------------------------------------- SLIDER PROFESIONALES ----------------------------------------*/
-    console.log('hola');
     const reviews = document.querySelector('.form-imgs.cards');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
+    // El width del contenedor
     const reviewWidth = 720;
     let currentIndex2 = 0;
 
-    // Function to move reviews to the left
+    // Función para mover los profesionales (cards) a la izquierda
     function moveLeft() {
         currentIndex2 = Math.max(currentIndex2 - 1, 0);
         reviews.style.transform = `translateX(-${currentIndex2 * reviewWidth}px)`;
     }
 
-    // Function to move reviews to the right
+    // Función para mover los profesionales (cards) a la derecha
     function moveRight() {
         const maxIndex = reviews.children.length - 1;
         currentIndex2 = Math.min(currentIndex2 + 1, maxIndex);
         reviews.style.transform = `translateX(-${currentIndex2 * reviewWidth}px)`;
     }
 
-    // Event listeners for navigation buttons
+    // Event listeners para los botones de "navegación"
     prevBtn.addEventListener('click', moveLeft);
     nextBtn.addEventListener('click', moveRight);
 
@@ -113,20 +115,16 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('miFormulario').addEventListener('submit', function (event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
+    // Almacenamos en variable los valores
     const especialidad = valoresSeleccionados[0];
     const modalidad = valoresSeleccionados[1];
     const profesional = valoresSeleccionados[2];
     const fecha = document.querySelector('#fecha');
 
-    // Aquí puedes acceder a los valores seleccionados en valoresSeleccionados y enviarlos al servidor
-    console.log('Datos seleccionados:');
-    console.log(especialidad);
-    console.log(modalidad);
-    console.log(profesional);
-    console.log(fecha.value.length);
-
+    // Comprobamos que haya seleccionado una fecha al no estar vacío
     if(fecha.value.length > 1) {
 
+        // Creamos el objeto que enviaremos como JSON al archivo PHP
         const data = {
             especialidad: especialidad,
             modalidad: modalidad,
@@ -134,11 +132,13 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
             fecha: fecha.value
         }
 
+        // Hacemos el fetch
         fetch('/proyectoIntegrador/build/php/pedirCita-fetch.php', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
+            // Pasamos en el body el objeto con toda la información del formulario, pero pasandolo como JSON
             body: JSON.stringify(data)
         })
         .then(response => {
@@ -152,11 +152,13 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
         .then(data => {
             if (data.registroExitoso) {
                 console.log('Datos enviados correctamente');
+                // Si los datos se han subido correctamente, redirijimos al usuario a la home pasando por la URL la variable cita con el valor 1, el cual abrirá una ventana modal de confirmación de cita
                 window.location.href = '/proyectoIntegrador?cita=1';
             } else {
                 
             }
         })
+        // En caso de error:
         .catch(error => {
             console.error('Fallo enviando los datos:', error);
         });
