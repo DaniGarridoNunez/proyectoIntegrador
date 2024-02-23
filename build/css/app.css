@@ -1936,3 +1936,16 @@ ul.sub-menu li > div.flex > img {
   right: 10px;
   transform: translateY(-50%);
 }
+
+.ver-perfil .formulario-perfil .cambiar-foto-perfil button.cropCanvas {
+  display: block;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 2rem;  
+  background-color: #3bb104;
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+  color: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(51, 62, 99, 0.75);
+  cursor: pointer;
+}
