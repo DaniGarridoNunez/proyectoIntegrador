@@ -1815,3 +1815,118 @@ ul.sub-menu li > div.flex > img {
   margin: 0;
   margin-left: 1rem;
 }
+
+/*------------------------------------- CONTENIDO VER PERFIL --------------------------------------*/
+.ver-perfil {
+  /* APARTADO FORMULARIO VER PERFIL */
+}
+.ver-perfil .contenedor {
+  margin: auto;
+}
+.ver-perfil .grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ver-perfil .contenedor-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px 0px #E1E1E1;
+}
+.ver-perfil aside {
+  background-color: #166D9E;
+  padding: 3rem;
+  gap: 1rem;
+}
+.ver-perfil aside div p {
+  color: #FFF;
+  text-align: center;
+  margin-top: 1rem;
+}
+.ver-perfil article {
+  padding: 2rem;
+}
+.ver-perfil article h1 {
+  margin: 0;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.ver-perfil .contenedor-article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.ver-perfil .contenedor-article .row {
+  display: flex;
+  justify-content: space-between;
+}
+.ver-perfil .contenedor-article .row div {
+  flex: 1;
+}
+.ver-perfil .contenedor-article .editar-btn button {
+  display: block;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 2rem;
+  background-color: #C1429D;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px 0px rgba(51, 62, 99, 0.75);
+  color: #FFF;
+}
+.ver-perfil .formulario-perfil .cambiar-foto-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.ver-perfil .formulario-perfil .cambiar-foto-perfil .img-wrapper {
+  width: 100%;
+}
+.ver-perfil .formulario-perfil .cambiar-foto-perfil .img-wrapper img {
+  display: block;
+  max-width: 100%;
+}
+.ver-perfil .formulario-perfil .cambiar-foto-perfil .custom-subir-archivo input[type=file] {
+  display: none;
+}
+.ver-perfil .formulario-perfil .cambiar-foto-perfil .custom-subir-archivo span {
+  display: block;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 2rem;
+  background-color: #C1429D;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px 0px rgba(51, 62, 99, 0.75);
+  padding: 0.5rem 1rem;
+  color: #FFF;
+}
+.ver-perfil .formulario-perfil .cambiar-foto-perfil .custom-subir-archivo span:hover {
+  background-color: #f0f0f0;
+}
+.ver-perfil .formulario-perfil .row {
+  gap: 2rem;
+}
+.ver-perfil .formulario-perfil .row input, .ver-perfil .formulario-perfil .row textarea {
+  width: 100%;
+}
+.ver-perfil .formulario-perfil .row input {
+  padding: 1rem;
+}
+.ver-perfil .formulario-perfil .row textarea {
+  resize: none;
+  height: 15rem;
+}
+.ver-perfil .formulario-perfil .row label {
+  font-weight: 700;
+}
+.ver-perfil .formulario-perfil .row .passwd-container {
+  position: relative;
+}
+.ver-perfil .formulario-perfil .row .passwd-container img {
+  position: absolute;
+  width: 24px;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
