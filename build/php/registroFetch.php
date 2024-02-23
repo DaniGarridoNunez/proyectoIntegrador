@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Hasheamos la password para que el dueño de la BD no pueda ver las claves de los usuarios
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-                $sql = "INSERT INTO usuarios(correo, password, rol) VALUES ('$email', '$passwordHash', 'paciente')";
+                $sql = "INSERT INTO usuarios(correo, password, foto, rol) VALUES ('$email', '$passwordHash', 'default.jpg' ,'paciente')";
                 $resultado = mysqli_query($conexion, $sql);
 
                 if ($resultado) {
