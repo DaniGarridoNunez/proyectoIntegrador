@@ -1,5 +1,12 @@
 <?php 
-     
+     require 'includes/app.php'; 
+     session_start();
+
+
+     $query = "SELECT * FROM usuarios WHERE id = {$_SESSION['id']} ";
+     $resultado = mysqli_query($conexion, $query);
+
+     $datos = mysqli_fetch_assoc($resultado);
  ?>
 
 <!DOCTYPE html>
@@ -24,8 +31,8 @@
         <div class="grid contenedor-grid">
             <aside>
                 <div>
-                    <img style="width: 250px;" src="build/img/verPerfilImg.png" alt="imagen perfil">
-                    <p>Paciente</p>
+                    <img style="border-radius: 10px;" src="fotoPerfil/<?php echo $datos['foto'] ?>" alt="imagen perfil">
+                    <p><?php $_SESSION['rol']; ?></p>
                 </div>
             </aside>
             <article>
@@ -33,21 +40,21 @@
                     <div class="row">
                         <div>
                             <h4>Nombre</h4>
-                            <p>Daniel</p>
+                            <p><?php echo $datos['nombre']; ?></p>
                         </div>
                         <div>
                             <h4>Apellidos</h4>
-                            <p>Garrido Nuñez</p>
+                            <p><?php echo $datos['apellido']; ?></p>
                         </div>
                     </div>
                     <div class="row">
                         <div>
                             <h4>Fecha nacimiento</h4>
-                            <p>14-02-2002</p>
+                            <p><?php echo $datos['fecha_nac']; ?></p>
                         </div>
                         <div>
                             <h4>Correo</h4>
-                            <p>danigarridonunez@gmail.com</p>
+                            <p><?php echo $datos['correo']; ?></p>
                         </div>
                     </div>
                     <div class="row">
@@ -57,7 +64,7 @@
                         </div>
                     </div>
                     <div class="editar-btn">
-                        <button>Editar perfil</button>
+                        <button><a href="editar-perfil.php">Editar perfil</a></button>
                     </div>
                 </div>
             </article>

@@ -1873,7 +1873,13 @@ ul.sub-menu li > div.flex > img {
   border-radius: 7px;
   box-shadow: 2px 2px 4px 0px rgba(51, 62, 99, 0.75);
   color: #FFF;
+  cursor: pointer;
 }
+
+.ver-perfil .contenedor-article .editar-btn a {
+  color: #FFF;
+}
+
 .ver-perfil .formulario-perfil .cambiar-foto-perfil {
   display: flex;
   flex-direction: column;
