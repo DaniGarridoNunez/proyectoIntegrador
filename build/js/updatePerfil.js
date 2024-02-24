@@ -4,7 +4,6 @@ const previewImage = document.getElementById('previewImage');
 
 // Escuchar el evento change en el input file
 inputFile.addEventListener('change', function() {
-    console.log(inputFile.files);
     // Verificar si se ha seleccionado un archivo
     if (inputFile.files && inputFile.files[0]) {
         // Obtener el archivo seleccionado
@@ -30,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const image = document.getElementById('previewImage');
     const container = document.querySelector('.cambiar-foto-perfil');
     const cambiarFotoBtn = document.querySelector('.custom-subir-archivo');
+    const formulario = document.querySelector('#formulario-perfil');
 
     image.addEventListener('click', function(){
         const guardarBtn = document.createElement('BUTTON');
@@ -55,10 +55,47 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             image.src = croppedCanva.toDataURL();
-            console.log(croppedCanva);
             cropper.destroy();
             guardarBtn.remove();
         })
+    })
+
+    formulario.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log('hola');
+        const nombre = document.querySelector('#nombre-perfil').value;
+        const apellidos = document.querySelector('#apellidos-perfil').value;
+        const correo = document.querySelector('#correo-perfil').value;
+        const fecha = document.querySelector('#fecha-perfil').value;
+        const desc = document.querySelector('#descripcion-perfil').value;
+        const imagen = image.src;
+        console.log(imagen);
+
+        const datos = {
+            nombre: nombre,
+            apellidos: apellidos,
+            correo: correo,
+            fecha: fecha,
+            desc: desc,
+            imagen: imagen
+        }
+
+        fetch('/proyectoIntegrador/editar-perfil.php', {
+            method: 'POST',
+            body: JSON.stringify(datos)
+        })
+        .then(response => {
+            if(!response.ok) {
+                throw new Error('Error en la respuesta del servidor');
+            } else {
+                console.log('suuu');
+                window.location.href = "/proyectoIntegrador/ver-perfil.php";
+            }
+
+        })
+        .catch(error => {
+            console.error('Fallo enviando los datos', error);
+        });
     })
 
 })

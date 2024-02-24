@@ -32,7 +32,7 @@
             <aside>
                 <div>
                     <img style="border-radius: 10px;" src="fotoPerfil/<?php echo $datos['foto'] ?>" alt="imagen perfil">
-                    <p><?php $_SESSION['rol']; ?></p>
+                    <p style="text-transform: uppercase;"><?php echo $_SESSION['rol']; ?></p>
                 </div>
             </aside>
             <article>
@@ -60,7 +60,7 @@
                     <div class="row">
                         <div>
                             <h4>Descripción</h4>
-                            <p>Soy estudiante en la Universidad Europea, me gusta ir al gimnasio y en mi tiempo libre me gusta continuar aprendiendo.</p>
+                            <p><?php echo !empty($datos['descripcion']) ? $datos['descripcion'] : '' ?></p>
                         </div>
                     </div>
                     <div class="editar-btn">
