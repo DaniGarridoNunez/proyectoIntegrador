@@ -37,6 +37,7 @@
                     $_SESSION['id'] = $usuario['id'];
                     $_SESSION['usuario'] = $usuario['correo'];
                     $_SESSION['rol'] = $usuario['rol'];
+                    $_SESSION['foto'] = $usuario['foto'];
                     $_SESSION['login'] = true;
 
                     // En función de que rol tenga el usuario, será redirigido a un lugar u a otro

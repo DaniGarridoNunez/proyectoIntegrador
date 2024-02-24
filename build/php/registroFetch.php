@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $_SESSION['id'] = $usuario['id'];
                                 $_SESSION['usuario'] = $usuario['correo'];
                                 $_SESSION['rol'] = $usuario['rol'];
+                                $_SESSION['foto'] = $usuario['foto'];
                                 $_SESSION['login'] = true;
                                 
                                 // Registro exitoso
