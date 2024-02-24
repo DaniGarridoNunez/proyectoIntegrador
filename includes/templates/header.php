@@ -121,7 +121,8 @@
                                     <a href="/proyectoIntegrador/registro.php">Registrar</a>
                                 </button>
                             <?php elseif(!empty($_SESSION)): ?>
-                               <div>
+                               <div style="display: flex; gap: 1rem; align-items: center;">
+                                <img style="width: 24px; height: 24px; border-radius: 50%;" src="fotoperfil/<?php echo $_SESSION['foto']; ?>" alt="foto perfil">
                                 <p style="font-size: 1.6rem;">
                                     <?php echo $_SESSION['usuario']; ?>
                                     <span class="border-nav-scroll"></span>
