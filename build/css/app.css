@@ -1221,16 +1221,7 @@ ul.sub-menu li > div.flex > img {
   color: #FFF;
   cursor: pointer;
 }
-.contenedor-p2 .login-icons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  padding: 0 5rem;
-}
-.contenedor-p2 .login-icons img {
-  width: 32px;
-  cursor: pointer;
-}
+
 .contenedor-p2 .not-account {
   margin-top: 2rem;
   justify-content: center;
