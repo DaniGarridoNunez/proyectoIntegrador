@@ -143,10 +143,19 @@
                 
                 <div id="g_id_onload"
                     data-client_id="280389540177-hsabcdgdth80kk2an3ak95kalmfkqpg3.apps.googleusercontent.com"
-                    data-callback="onSignIn">
+                    data-callback="onSignIn"
+                    data-auto_prompt="false">
                 </div>
 
-                <div style="margin: 0 auto;" class="g_id_signin" data-type="standard"></div>
+                <div style="margin: 0 auto;" 
+                class="g_id_signin" 
+                data-type="standard"
+                data-shape="rectangular"
+                data-theme="filled_blue"
+                data-text="signin_with"
+                data-size="large"
+                data-logo_alignment="left">
+                </div>
 
                 <div class="flex not-account">
                     <p>No tienes una cuenta?</p>
@@ -176,7 +185,7 @@ function sendTokenToServer(credential) {
     .then(response => response.json())
     .then(data => {
         if(data.exito) {
-            window.location.href = "/proyectoIntegrador";
+            // window.location.href = "/proyectoIntegrador";
         }
 
     })
