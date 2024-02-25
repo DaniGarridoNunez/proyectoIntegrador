@@ -13,6 +13,7 @@
         }
     ],
     "require": {
-        "intervention/image": "2"
+        "intervention/image": "2",
+        "google/apiclient": "^2.15"
     }
 }
