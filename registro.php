@@ -1,8 +1,3 @@
-<?php 
-    require 'includes/app.php'; 
-
- ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +11,8 @@
     <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body class="main-login">
-    <div class="grid-login">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<div class="grid-login">
         <div class="grid-p1" style="position: relative;">
             <div class="flex flex-gap-20 flex-align-v nav-top-left">
                 <div>
@@ -69,21 +65,59 @@
                     <input type="submit" value="Registrarme ya!">
                 </form>
                 <div class="login-span"><span>Or sign up with</span></div>
-                <div class="login-icons">
-                    <div>
-                        <img src="build/img/google.png" alt="logo google">
-                    </div>
-                    <div>
-                        <img src="build/img/facebook.png" alt="logo facebook">
-                    </div>
+
+
+
+
+
+
+                <div id="g_id_onload"
+                    data-client_id="280389540177-hsabcdgdth80kk2an3ak95kalmfkqpg3.apps.googleusercontent.com"
+                    data-callback="onSignIn">
                 </div>
+
+                <div style="margin: 0 auto;" class="g_id_signin" data-type="standard"></div>
+
+
                 <div class="flex not-account">
                     <p>Ya tienes cuenta?</p>
                     <a href="/proyectoIntegrador/login.php">Inicia Sesion</a>
                 </div>
+
+
             </div> <!-- .contenedor-p2 -->
         </div> <!-- 2p grid -->
     </div>
+<script>
+   function onSignIn(response) {
+    console.log(response);
+    var credential = response.credential;
+
+
+    sendTokenToServer(credential);
+   }
+
+    function sendTokenToServer(credential) {
+
+        fetch('procesar_token.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'credential=' + encodeURIComponent(credential)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.exito) {
+            window.location.href = "/proyectoIntegrador";
+        }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
+    }
+
+</script>
     <script src="build/js/index.js"></script>
     <script src="build/js/register.js"></script>
 </body>

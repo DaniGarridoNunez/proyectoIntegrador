@@ -48,7 +48,7 @@ if(isset($_POST['credential'])) {
                 $_SESSION['rol'] = $usuario['rol'];
                 $_SESSION['foto'] = $usuario['foto'];
                 $_SESSION['login'] = true;
-                echo "Registro y inicio de sesión exitosos como $email";
+                echo json_encode(array("exito" => true));
             } else {
                 // Error al registrar al usuario
                 error_log('Error al registrar al usuario en la base de datos');
@@ -61,7 +61,7 @@ if(isset($_POST['credential'])) {
             $_SESSION['rol'] = $usuario['rol'];
             $_SESSION['foto'] = $usuario['foto'];
             $_SESSION['login'] = true;
-            echo "Inicio de sesión exitoso como $email";
+            echo json_encode(array("exito" => true));
         }
 
         // Cierra la conexión a la base de datos
