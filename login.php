@@ -185,7 +185,7 @@ function sendTokenToServer(credential) {
     .then(response => response.json())
     .then(data => {
         if(data.exito) {
-            // window.location.href = "/proyectoIntegrador";
+            window.location.href = "/proyectoIntegrador";
         }
 
     })
