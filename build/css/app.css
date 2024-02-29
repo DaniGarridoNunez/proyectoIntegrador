@@ -2134,3 +2134,35 @@ ul.sub-menu li > div.flex > img {
   max-height: 32px;
   cursor: pointer;
 }
+
+.formularioExitoso {
+  max-width: 800px;
+  margin: 5rem auto;
+}
+
+.formularioExitoso fieldset {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 5rem 2rem;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.formularioExitoso fieldset input:not([type="submit"]){
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #166D9E;
+}
+.formularioExitoso fieldset input[type="submit"]{
+    display: block;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 2rem;
+    background-color: #C1429D;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px 0px rgba(51, 62, 99, 0.75);
+    color: #FFF;
+    cursor: pointer;
+}

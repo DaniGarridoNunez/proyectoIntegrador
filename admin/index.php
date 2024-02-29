@@ -18,6 +18,31 @@
     
     $queryProfesional = "SELECT * FROM usuarios WHERE rol = 'profesional'";
     $resultadoProfesional = mysqli_query($conexion, $queryProfesional);
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        echo '<pre>';
+        var_dump($_POST);
+        echo '</pre>';
+
+        $query = "DELETE FROM faqs WHERE id = ? ";
+
+        //Preparamos la declaración
+        if($stmt = mysqli_prepare($conexion, $query)) {
+            // Vinculamos los parámetros
+            mysqli_stmt_bind_param($stmt, "i", $idFaq);
+
+            // Asignamos valor a $idFaq
+            $idFaq = $_POST['id'];
+
+            // Ejecutamos la declaración
+            mysqli_stmt_execute($stmt);
+
+            // Cerrar la declaración
+            mysqli_stmt_close($stmt);
+
+            header('Location: ?resultado=6');
+        }
+    }
     
  ?>
 
@@ -57,7 +82,10 @@
             echo '<p class="alerta exito">Pregunta Añadida Correctamente</p>';
             break;
         case 6:
-            echo '<p class="alerta exito">Pregunta Eliminado Correctamente</p>';
+            echo '<p class="alerta exito">Pregunta Eliminada Correctamente</p>';
+            break;
+        case 7:
+            echo '<p class="alerta exito">Pregunta Actualizada Correctamente</p>';
             break;
     }
     ?>
@@ -262,7 +290,7 @@
                                         <input type="submit" class="boton-rojo-block" value="Eliminar">
                                     </form>
                                     <button>
-                                        <a href="/bienesraices/admin/propiedades/actualizar.php?id=<?php echo $faqs['id']; ?>" class="boton-amarillo-block">Actualizar</a>
+                                        <a href="/proyectoIntegrador/admin/acciones/actualizarFaq.php?id=<?php echo $faqs['id']; ?>" class="boton-amarillo-block">Actualizar</a>
                                     </button>
                                 </td>
                             </tr>
