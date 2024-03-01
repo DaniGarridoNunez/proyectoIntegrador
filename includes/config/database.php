@@ -95,18 +95,18 @@ function getConexion() {
                 $sqlInserts = "
                 -- USUARIOS
                 -- PROFESIONALES
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Luis', 'Jerez', 'luisjerez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'nutricionista', 'Cinco años de experiencia licenciado en la Universidad Europea de Madrid', '2000-10-23', 'default.jpg', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Eric', 'Hernandez', 'erichernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1980-03-15', 'default.jpg', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Angel', 'Perez', 'angelperez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1992-07-30', 'default.jpg', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Mario', 'Rodriguez', 'mariorodriguez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1975-01-09', 'default.jpg', 'profesional');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1997-08-11', 'default.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Luis', 'Jerez', 'luisjerez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'nutricionista', 'Cinco años de experiencia licenciado en la Universidad Europea de Madrid', '2000-10-23', 'profesional1.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Eric', 'Hernandez', 'erichernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1980-03-15', 'profesional2.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Angel', 'Perez', 'angelperez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1992-07-30', 'profesional3.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Mario', 'Rodriguez', 'mariorodriguez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'psicologo', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1975-01-09', 'profesional4.jpg', 'profesional');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', 'nutricionista', 'cinco años de experiencia licenciado en la Universidad Europea de Madrid', '1997-08-11', 'profesional1.jpg', 'profesional');
                     
                     -- PACIENTES
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Fernando', 'Alonso', 'fernandoalonso@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '2003-02-11', 'default.jpg', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '2001-01-23', 'default.jpg', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '2004-08-12', 'default.jpg', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '1990-09-08', 'default.jpg', 'paciente');
-                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Enrique', 'Fernandez', 'enriquefernandez@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '1999-12-30', 'default.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Fernando', 'Alonso', 'fernandoalonso@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '2003-02-11', 'paciente1.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Paolo', 'Maldini', 'paolomaldini@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '2001-01-23', 'paciente2.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Austen', 'Renner', 'austenrenner@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '2004-08-12', 'paciente3.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Coby', 'Botsford', 'cobybotsford@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '1990-09-08', 'default.jpg', 'paciente');
+                INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES ('Jarred', 'Abshire', 'jarredabshire@gmail.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, '1999-12-30', 'default.jpg', 'paciente');
                     
                     -- ADMINISTRADORES
                 INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES (NULL, NULL, 'dani@admin.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, NULL, 'default.jpg', 'admin');
@@ -116,11 +116,77 @@ function getConexion() {
                 INSERT INTO usuarios(nombre, apellido, correo, password, especialidad, descripcion, fecha_nac, foto, rol) VALUES (NULL, NULL, 'irene@admin.com', '" . password_hash('1234', PASSWORD_DEFAULT) . "', NULL, NULL, NULL, 'default.jpg', 'admin');
 
                 -- CITAS
-                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 2, 'presencial', '2024/02/15');
-                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 1, 'videollamada', '2024/01/24');
-                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 4, 'presencial', '2024/03/12');
-                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 5, 'videollamada', '2024/02/02');
-                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 2, 'presencial', '2024/01/30');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 6, 'presencial', '2024/02/15 18:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 7, 'videollamada', '2024/01/24 16:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 8, 'presencial', '2024/03/12 21:10:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 9, 'videollamada', '2024/02/02 18:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 10, 'presencial', '2024/01/30 20:00:00');
+                
+                -- citas del profesional 1
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 6, 'videollamada', '2024-01-30 18:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 7, 'presencial', '2024-01-20 19:50:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 8, 'videollamada', '2024-01-10 20:20:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 9, 'presencial', '2023-01-27 21:45:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 10, 'videollamada', '2023-09-18 16:15:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 6, 'presencial', '2023-11-30 17:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 7, 'videollamada', '2024-01-02 17:30:00');
+
+
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 6, 'videollamada', '2024/03/10 18:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 7, 'videollamada', '2024/03/14 19:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (1, 8, 'videollamada', '2024/04/02 20:45:00');
+                
+                -- citas del profesional 2
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 6, 'videollamada', '2024/01/30 16:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 7, 'presencial', '2024/01/20 17:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 8, 'videollamada', '2024/01/10 18:45:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 9, 'presencial', '2023/01/27 19:15:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 10, 'videollamada', '2023/09/18 20:50:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 6, 'presencial', '2023/11/31 21:20:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 7, 'videollamada', '2024/01/02 22:00:00');
+
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 6, 'videollamada', '2024/03/30 18:25:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 7, 'videollamada', '2024/03/25 16:50:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (2, 8, 'videollamada', '2024/04/07 20:00:00');
+               
+                -- citas del profesional 3
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 6, 'videollamada', '2024/01/30 18:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 7, 'presencial', '2024/01/20 21:10:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 8, 'videollamada', '2024/01/10 20:45:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 9, 'presencial', '2023/01/27 21:20:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 10, 'videollamada', '2023/09/18 16:35:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 7, 'presencial', '2023/11/31 19:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 8, 'videollamada', '2024/01/02 17:45:00');
+
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 6, 'videollamada', '2024/03/11 19:20:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 7, 'videollamada', '2024/03/19 16:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (3, 8, 'videollamada', '2024/04/05 20:00:00');
+    
+                -- citas del profesional 4
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 6, 'videollamada', '2024/01/30 21:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 7, 'presencial', '2024/01/20 18:45:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 8, 'videollamada', '2024/01/10 17:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 9, 'presencial', '2023/01/27 16:20:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 10, 'videollamada', '2023/09/18 18:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 9, 'presencial', '2023/11/31 20:15:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 7, 'videollamada', '2024/01/02 17:20:00');
+
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 6, 'videollamada', '2024/03/07 20:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 7, 'videollamada', '2024/03/22 17:45:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (4, 8, 'videollamada', '2024/04/07 16:15:00');
+
+                -- citas del profesional 5
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 6, 'videollamada', '2024/01/30 16:55:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 7, 'presencial', '2024/01/20 18:30:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 8, 'videollamada', '2024/01/10 20:00:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 9, 'presencial', '2023/01/27 18:25:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 10, 'videollamada', '2023/09/18 21:10:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 9, 'presencial', '2023/11/30 21:40:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 8, 'videollamada', '2024/01/02 22:00:00');
+
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 6, 'videollamada', '2024/03/09 17:50:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 7, 'videollamada', '2024/03/18 16:45:00');
+                INSERT INTO citas (id_profesional, id_paciente, tipo_cita, dia_cita) VALUES (5, 8, 'videollamada', '2024/04/10 19:10:00');
     
                 
                 -- FAQS
