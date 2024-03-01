@@ -1735,7 +1735,7 @@ ul.sub-menu li > div.flex > img {
 .pedir-cita .contenedor-form .paso3 {
   overflow: hidden;
   position: relative;
-  width: 700px;
+  width: 720px;
   min-height: 100%;
 }
 
@@ -1790,7 +1790,7 @@ ul.sub-menu li > div.flex > img {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
 }
 .pedir-cita .current-step {
   background-color: #ffffff; /* Fondo blanco */
