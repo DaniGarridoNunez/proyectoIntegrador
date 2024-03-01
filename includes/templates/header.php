@@ -122,12 +122,13 @@
                                 </button>
                             <?php elseif(!empty($_SESSION)): ?>
                                <div style="display: flex; gap: 1rem; align-items: center;">
-                                <img style="width: 24px; height: 24px; border-radius: 50%;" src="fotoperfil/<?php echo $_SESSION['foto']; ?>" alt="foto perfil">
+                                <img style="width: 24px; height: 24px; border-radius: 50%;" src="/proyectoIntegrador/fotoperfil/<?php echo $_SESSION['foto']; ?>" alt="foto perfil">
                                 <p style="font-size: 1.6rem;">
                                     <?php echo $_SESSION['usuario']; ?>
                                     <span class="border-nav-scroll"></span>
                                 </p> 
                                 <ul class="sub-menu">
+
                                     <a href="/proyectoIntegrador/ver-perfil.php">
                                     <li>
                                         <div>
@@ -136,6 +137,29 @@
                                         </div>
                                     </li>
                                     </a>
+
+                                    <?php if($_SESSION['rol'] === 'profesional'): ?>
+                                        <a href="/proyectoIntegrador/profesionales/index.php">
+                                    <li>
+                                        <div>
+                                            <img src="/proyectoIntegrador/build/img/tablero.png" alt="icono usuario" style="width: 32px;">
+                                            <span>Dashboard</span>
+                                        </div>
+                                    </li>
+                                    </a>
+                                    <?php endif; ?>
+
+                                    <?php if($_SESSION['rol'] === 'admin'): ?>
+                                        <a href="/proyectoIntegrador/admin/index.php">
+                                    <li>
+                                        <div>
+                                            <img src="/proyectoIntegrador/build/img/tablero.png" alt="icono usuario" style="width: 32px;">
+                                            <span>Panel</span>
+                                        </div>
+                                    </li>
+                                    </a>
+                                    <?php endif; ?>
+
                                     <a href="/proyectoIntegrador/cerrar-sesion.php">
                                         <li>    
                                             <div>

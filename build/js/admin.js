@@ -639,10 +639,13 @@ formularioFAQ.addEventListener('submit', function(e) {
     })
     .then(response => {
         if (response.ok) {
-            console.log('Datos de FAQ enviados correctamente');
+            return response.json();
             // Puedes hacer algo con la respuesta del servidor si es necesario
-        } else {
-            console.error('Error al enviar los datos de FAQ');
+        }
+    })
+    .then(data => {
+        if(data.exito) {
+            window.location.href = "?resultado=5"
         }
     })
     .catch(error => {
