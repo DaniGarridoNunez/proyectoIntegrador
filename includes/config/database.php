@@ -74,6 +74,27 @@ function getConexion() {
                 CONSTRAINT fk_pac FOREIGN KEY (id_paciente) REFERENCES usuarios(id),
                 testimonio VARCHAR(255) NOT NULL
             );
+
+            CREATE TABLE IF NOT EXISTS chats (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                id_profesional INT NOT NULL,
+                id_paciente INT NOT NULL,
+                id_cita INT NOT NULL,
+                FOREIGN KEY (id_cita) REFERENCES citas(id),
+                FOREIGN KEY (id_profesional) REFERENCES usuarios(id),
+                FOREIGN KEY (id_paciente) REFERENCES usuarios(id)
+            );
+            
+            CREATE TABLE IF NOT EXISTS mensajes (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                id_chat INT NOT NULL,
+                id_usuario INT NOT NULL,
+                mensaje TEXT NOT NULL,
+                fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (id_chat) REFERENCES chats(id),
+                FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+            );
+
     
         ";
                 // Después de ejecutar el multi_query, hay que consumir todos los resultados antes de realizar otra consulta SQL, esto se puede "saltar" ejecutando las consultas 1 a 1, con un query normal
@@ -203,7 +224,29 @@ function getConexion() {
                 INSERT INTO testimonios (id_paciente, testimonio) VALUES (5, 'Gracias al psicolo Eric Hernandez estoy mejorando mucho');
                 INSERT INTO testimonios (id_paciente, testimonio) VALUES (2, 'Se nota que el nutricionista Enrique Fernandez tiene muchos años de experiencia');
                 INSERT INTO testimonios (id_paciente, testimonio) VALUES (4, 'El trabajo que hacen en esta empresa es muy bueno, se lo recomendaria a cualquier persona');
-    
+                
+                
+                -- CHATS
+                INSERT INTO chats (id_profesional, id_paciente, id_cita) VALUES
+                                                                        (1, 6, 13), 
+                                                                        (2, 7, 14),
+                                                                        (3, 8, 15);
+
+                
+                -- MENSAJES
+                INSERT INTO mensajes (id_chat, id_usuario, mensaje) VALUES
+                                                                            (1, 1, 'Hola, ¿cómo te sientes hoy?'),
+                                                                            (1, 6, 'Bien, gracias por preguntar. ¿Y tú?'),
+                                                                            (1, 1, 'Estoy bien, gracias.'),
+
+                                                                            (2, 2, 'Buenos días, ¿cómo ha estado su día?'),
+                                                                            (2, 7, 'Hola, mi día ha estado ocupado pero bien.'),
+                                                                            (2, 2, 'Entiendo, ¿hay algo en particular que le preocupe?'),
+
+                                                                            (3, 3, 'Hola, ¿cómo puedo ayudarte hoy?'),
+                                                                            (3, 8, 'Tengo algunas preocupaciones sobre mi salud.'),
+                                                                            (3, 3, 'Entiendo, estaré encantado de ayudarte a aclarar tus preocupaciones.');
+
                 ";
                 // Consumimos todas las consultas
                 if(mysqli_multi_query($conexion, $sqlInserts)) {
