@@ -1,5 +1,6 @@
 <?php 
-    require 'includes/app.php'; 
+    require 'includes/app.php';
+    session_start();
  ?>
 
 <!DOCTYPE html>

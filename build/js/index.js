@@ -11,6 +11,7 @@ function iniciarApp() {
 
 function darkMode() {
     const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    const btn = document.querySelector('.dark-mode-boton');
 
     if(prefiereDarkMode.matches) {
         document.body.classList.add('dark-mode');
@@ -28,6 +29,13 @@ function darkMode() {
 
     const botonDarkMode = document.querySelector('.dark-mode-boton');
     botonDarkMode.addEventListener('click', function() {
+        if(btn.src === 'http://localhost/proyectoIntegrador/build/img/darkMode.png') {
+            btn.src = 'build/img/darkmode2.png';
+        } else {
+            btn.src = 'build/img/darkMode.png';
+        }
+        console.log(btn);
+        console.log(btn.src);
         document.body.classList.toggle('dark-mode');
     });
 }

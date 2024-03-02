@@ -536,9 +536,10 @@ ul, li {
   border-radius: 7px;
   box-shadow: 2px 2px 4px 0px rgba(51, 62, 99, 0.75);
   font-size: 1.6rem;
+  transition: transform .2s;
 }
 .nav ul li > button.registro:hover {
-  background-color: rgba(193, 66, 157, 0.7);
+  transform: scale(1.1);
 }
 .nav ul li > button.registro a {
   color: #FFF;
@@ -554,11 +555,10 @@ ul, li {
   margin-right: 1rem;
   font-size: 1.6rem;
   color: black;
+  transition: transform .2s;
 }
 .nav ul li > button.iniciar-sesion:hover {
-  border-image: linear-gradient(to right, #C1429D 50%, #166D9E 50%);
-  border-image-slice: 1;
-  border-color: transparent;
+  transform: scale(1.1);
 }
 
 span.border-nav-scroll {
@@ -1039,7 +1039,7 @@ ul.sub-menu li > div.flex > img {
   justify-content: center;
   align-items: center;
 }
-.contacto-section div.contenedor button {
+.contacto-section div.contenedor button, .casos-exito-btn {
   display: block;
   padding: 1rem 2rem;
   border: none;
@@ -1064,6 +1064,7 @@ ul.sub-menu li > div.flex > img {
 }
 .grid-casos-exito .card img {
   object-fit: cover;
+  object-position: bottom;
   width: 100%;
   height: 100%;
 }
@@ -1337,7 +1338,7 @@ ul.sub-menu li > div.flex > img {
   padding: 1rem;
   border: 1px solid #64748B;
   border-radius: 7px;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .contacto-formulario div.contenedor-textarea textarea {
   width: 100%;
@@ -2224,7 +2225,11 @@ ul.sub-menu li > div.flex > img {
 }
 
 .dark-mode .sub-menu,.dark-mode .contenedor-faqs-header, .dark-mode .legales-bg {
-  background: #919191;
+  background: #bababa;
+}
+
+.dark-mode .legales-bg p, .dark-mode .sub-menu li > p, .dark-mode .sub-menu li > div a{
+  color: #000;
 }
 
 .dark-mode.ver-perfil .contenedor-grid {

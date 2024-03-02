@@ -1,7 +1,10 @@
 <?php 
      require 'includes/app.php'; 
      session_start();
-
+     if(!isset($_SESSION['login'])) {
+        header('Location: /proyectoIntegrador/login.php');
+        exit;
+    }
 
      $query = "SELECT * FROM usuarios WHERE id = {$_SESSION['id']} ";
      $resultado = mysqli_query($conexion, $query);

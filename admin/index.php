@@ -2,10 +2,9 @@
     require '../includes/app.php'; 
     session_start();
 
-    function truncarTexto($texto, $max = 50, $fin = '...') {
-        if (strlen($texto) <= $max) return $texto;
-        $subtexto = substr($texto, 0, $max - strlen($fin));
-        return $subtexto . $fin;
+    if($_SESSION['rol'] !== 'admin') {
+        header('Location: /proyectoIntegrador');
+        exit;
     }
 
     $queryFaqs = "SELECT * FROM faqs";
@@ -20,9 +19,6 @@
     $resultadoProfesional = mysqli_query($conexion, $queryProfesional);
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-        echo '<pre>';
-        var_dump($_POST);
-        echo '</pre>';
 
         $query = "DELETE FROM faqs WHERE id = ? ";
 

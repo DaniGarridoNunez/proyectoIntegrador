@@ -1,6 +1,10 @@
 <?php 
     require 'includes/app.php'; 
-
+    session_start();
+    if(isset($_SESSION['login'])) {
+        header('Location: /proyectoIntegrador');
+        exit;
+    }
     $errores = [];
 
     if($_SERVER['REQUEST_METHOD'] == "POST") {

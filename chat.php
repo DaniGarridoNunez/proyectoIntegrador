@@ -1,14 +1,17 @@
 <?php 
     require 'includes/app.php'; 
     session_start();
-
+    if(!$_SESSION['login']) {
+        header('Location: /proyectoIntegrador/login.php');
+        exit;
+    }
     $idCita = $_GET['id'] ?? null;
 
-    if(!empty($_SESSION['id'])) {
+    if(!empty($_SESSION['id']) && $idCita !== null) {
         $query = "SELECT * FROM chats WHERE id_cita = '{$idCita}' ";
         $resultadoCitas = mysqli_query($conexion, $query);
         $chats = mysqli_fetch_assoc($resultadoCitas);
-    
+
         $query = "SELECT * FROM usuarios WHERE id = '{$chats["id_paciente"]}' ";
         $resultadoPaciente = mysqli_query($conexion, $query);
         $paciente = mysqli_fetch_assoc($resultadoPaciente);
@@ -16,7 +19,7 @@
         $query = "SELECT * FROM mensajes WHERE id_chat = '{$chats["id"]}' ";
         $resultadoMensajes = mysqli_query($conexion, $query);
     } else {
-        header('Location: /proyectointegrador/login.php');
+        header('Location: /proyectoIntegrador');
     }
     
     
