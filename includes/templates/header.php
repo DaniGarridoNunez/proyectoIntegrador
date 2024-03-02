@@ -132,7 +132,7 @@
                                     <a href="/proyectoIntegrador/ver-perfil.php">
                                     <li>
                                         <div>
-                                            <img src="/proyectoIntegrador/build/img/usuario.png" alt="icono usuario" style="width: 32px;">
+                                            <img src="/proyectoIntegrador/build/img/usuario-new.png" alt="icono usuario" style="width: 32px;">
                                             <span>Ver Perfil</span>
                                         </div>
                                     </li>
@@ -179,14 +179,14 @@
                                 <?php if(empty($_SESSION['id'])) : ?>
                                     <a href="/proyectoIntegrador/login.php"><img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario"></a>
                                 <?php else: ?>
-                                    <img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario">
+                                    <img class="user-btn" src="/proyectoIntegrador/build/img/usuario-new.png" alt="logo usuario">
                                 <?php endif; ?>
                                 <?php if(!empty($_SESSION)): ?>
                                 <ul class="sub-menu">
                                     <a href="/proyectoIntegrador/ver-perfil.php">
                                     <li>
                                         <div>
-                                            <img src="/proyectoIntegrador/build/img/usuario.png" alt="icono usuario" style="width: 32px;">
+                                            <img src="/proyectoIntegrador/build/img/usuario-new.png" alt="icono usuario" style="width: 32px;">
                                             <span>Ver Perfil</span>
                                         </div>
                                     </li>
