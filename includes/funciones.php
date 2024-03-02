@@ -7,4 +7,9 @@
         return true;
     }
 
+    function dividirHora($hora) {
+        $dividido = explode(" ", $hora);
+        return $dividido;
+    }
+
  ?>
