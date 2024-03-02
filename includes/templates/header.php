@@ -204,7 +204,7 @@
                                 <?php endif; ?>
                             </div> <!-- fin div usuario -->
                             <div>
-                                <img src="/proyectoIntegrador/build/img/darkMode.png" alt="Boton Dark Mode">
+                                <img src="/proyectoIntegrador/build/img/darkMode.png" alt="Boton Dark Mode" class="dark-mode-boton">
                             </div>
                         </li>
                     </ul>

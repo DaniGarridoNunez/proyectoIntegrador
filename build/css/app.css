@@ -2184,3 +2184,34 @@ ul.sub-menu li > div.flex > img {
     color: #FFF;
     cursor: pointer;
 }
+
+/*----------------------- DARK MODE -------------------------*/
+.header {
+  background: #fff;
+}
+
+.dark-mode {
+  background: #2f2f2f;
+}
+.dark-mode .header {
+  background: #000;
+}
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode p, .dark-mode legend, .dark-mode label, .dark-mode li, .dark-mode a, .dark-mode span {
+  color: #FFF;
+}
+.dark-mode button.iniciar-sesion a {
+  color: #000;
+}
+.dark-mode footer {
+  background: #000;
+}
+
+.dark-mode .contenedor-mapa .grid-contacto {
+  background: #484848;
+} 
+
+.dark-mode .grid-p2 .not-account p {
+  color: #fff;
+}
+
+/*----------------------- FIN DARK MODE -------------------------*/
