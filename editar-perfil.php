@@ -2,12 +2,31 @@
      require 'includes/app.php'; 
      use Intervention\Image\ImageManagerStatic as Image;
      session_start();
+     if(!isset($_SESSION['login'])) {
+        header('Location: /proyectoIntegrador/login.php');
+        exit;
+    }
 
+     $query = "SELECT * FROM usuarios WHERE id = ?";
+     if ($stmt = mysqli_prepare($conexion, $query)) {
+        // Vincular parámetros
+        mysqli_stmt_bind_param($stmt, "i", $_SESSION['id']);
 
-     $query = "SELECT * FROM usuarios WHERE id = {$_SESSION['id']} ";
-     $resultado = mysqli_query($conexion, $query);
+        // Ejecutar la consulta
+        mysqli_stmt_execute($stmt);
 
-     $datos = mysqli_fetch_assoc($resultado);
+        // Obtener el resultado
+        $resultado = mysqli_stmt_get_result($stmt);
+
+        // Obtener los datos
+        $datos = mysqli_fetch_assoc($resultado);
+
+        // Cerrar la declaración
+        mysqli_stmt_close($stmt);
+    } else {
+        // Manejar el error si la preparación falla
+        echo "Error al preparar la consulta.";
+    }
 
      if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
