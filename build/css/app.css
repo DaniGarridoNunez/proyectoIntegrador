@@ -2086,7 +2086,7 @@ ul.sub-menu li > div.flex > img {
   width: 32px;
   border-radius: 50%;
 }
-.grid-dashboard .aside2 main .paciente #img-icono {
+.grid-dashboard .aside2 main .paciente .img-icono-paciente {
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -2242,3 +2242,117 @@ ul.sub-menu li > div.flex > img {
 }
 
 /*----------------------- FIN DARK MODE -------------------------*/
+
+/*--------------------------------------------- ESTILOS CHAT ------------------------------------------------*/
+.chat-page .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 350px)) minmax(250px, 850px);
+  grid-template-rows: minmax(300px, 800px);
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.chat-page .chat-abiertos {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #128C7E;
+}
+.chat-page .chat-abiertos div img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.chat-page .chat-abiertos div > div {
+  background-color: rgba(206, 206, 206, 0.4705882353);
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #a9a9a9;
+  cursor: pointer;
+}
+.chat-page .chat-abiertos div > div p {
+  font-size: 1.6rem;
+}
+.chat-page .chat-mensajes {
+  background-color: rgba(0, 0, 0, 0.205);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-page .chat-mensajes .chat {
+  background: white;
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.chat-page .chat-mensajes .chat header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #128C7E;
+  height: 10%;
+}
+.chat-page .chat-mensajes .chat header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.chat-page .chat-mensajes .chat header p {
+  font-size: 1.6rem;
+  color: #FFF;
+}
+.chat-page .chat-mensajes .chat header .iconos {
+  display: flex;
+  gap: 1rem;
+}
+.chat-page .chat-mensajes .chat header .iconos img {
+  width: 32px;
+  height: 32px;
+}
+.chat-page .chat-mensajes .chat footer {
+  height: 10%;
+  width: 100%;
+  background: #e1e1e1;
+  position: relative;
+}
+.chat-page .chat-mensajes .chat footer form {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.chat-page .chat-mensajes .chat footer input {
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+}
+.chat-page .chat-mensajes .chat footer button {
+  cursor: pointer;
+}
+.chat-page .chat-mensajes .chat main {
+  height: 80%;
+  overflow: auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+.chat-page .chat-mensajes .chat main p, .chat-page .chat-mensajes .chat main span {
+  font-size: 1.4rem;
+}
+.chat-page .chat-mensajes .chat main .left, .chat-page .chat-mensajes .chat main .right {
+  background: rgb(209, 209, 209);
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 35rem;
+}
+.chat-page .chat-mensajes .chat main .left {
+  align-self: flex-start;
+}
+.chat-page .chat-mensajes .chat main .right {
+  align-self: flex-end;
+}
