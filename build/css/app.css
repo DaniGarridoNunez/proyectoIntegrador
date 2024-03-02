@@ -1337,7 +1337,7 @@ ul.sub-menu li > div.flex > img {
   padding: 1rem;
   border: 1px solid #64748B;
   border-radius: 7px;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .contacto-formulario div.contenedor-textarea textarea {
   width: 100%;
@@ -2224,7 +2224,11 @@ ul.sub-menu li > div.flex > img {
 }
 
 .dark-mode .sub-menu,.dark-mode .contenedor-faqs-header, .dark-mode .legales-bg {
-  background: #919191;
+  background: #bababa;
+}
+
+.dark-mode .legales-bg p, .dark-mode .sub-menu li > p, .dark-mode .sub-menu li > div a{
+  color: #000;
 }
 
 .dark-mode.ver-perfil .contenedor-grid {
