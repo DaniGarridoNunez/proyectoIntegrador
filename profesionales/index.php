@@ -1,7 +1,10 @@
 <?php 
     include '../includes/app.php';
     session_start();
-
+    if($_SESSION['rol'] !== 'profesional') {
+        header('Location: /proyectoIntegrador');
+        exit;
+    }
     $query = "SELECT * FROM usuarios WHERE id = {$_SESSION['id']}";
     $resultado = mysqli_query($conexion, $query);
 

@@ -1,6 +1,10 @@
 <?php 
 require '../../includes/app.php'; 
 session_start();
+if($_SESSION['rol'] !== 'admin') {
+    header('Location: /proyectoIntegrador');
+    exit;
+}
 
 $query = "SELECT * FROM faqs WHERE id = ? ";
 

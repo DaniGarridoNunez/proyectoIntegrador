@@ -2,6 +2,10 @@
 
 require '../../includes/app.php';
 session_start();
+if($_SESSION['rol'] !== 'admin') {
+    header('Location: /proyectoIntegrador');
+    exit;
+}
 // Verifica si se ha recibido una solicitud POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recoge los datos enviados como JSON y los decodifica

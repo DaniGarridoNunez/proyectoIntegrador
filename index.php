@@ -1,10 +1,6 @@
 <?php 
     require 'includes/app.php'; 
     session_start();
-    // session_destroy();
-    // echo '<pre>';
-    // var_dump($_SESSION);
-    // echo '</pre>';
 
     if(isset($_GET['registro']) && $_GET['registro'] == 1): ?>
         <div class="modal-registro-exitoso" style="z-index: 2;">
