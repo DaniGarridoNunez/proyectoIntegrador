@@ -1,3 +1,19 @@
+// Función para obtener la hora actual en formato HH:MM
+function obtenerHoraActual() {
+    const ahora = new Date();
+    let hora = ahora.getHours();
+    let minutos = ahora.getMinutes();
+
+    // Agregar un 0 delante si los minutos son menores que 10
+    minutos = minutos < 10 ? '0' + minutos : minutos;
+
+    // Formatear la hora en formato HH:MM
+    const horaActual = hora + ':' + minutos;
+
+    return horaActual;
+}
+
+
 const formulario = document.querySelector('#formulario-chat');
 
 formulario.addEventListener('submit', function(e){
@@ -28,7 +44,7 @@ formulario.addEventListener('submit', function(e){
             p.textContent = mensaje;
 
             const span = document.createElement('SPAN');
-            span.textContent = '14:03';
+            span.textContent = obtenerHoraActual();
 
             div.appendChild(p);
             div.appendChild(span);
