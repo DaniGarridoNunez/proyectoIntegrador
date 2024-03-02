@@ -587,7 +587,7 @@ ul.sub-menu {
   border: 4px solid #166D9E;
   border-radius: 20px;
   list-style: none;
-  z-index: 1;
+  z-index: 20;
   flex-wrap: wrap;
   min-width: 30rem;
   flex: 1;
@@ -1144,6 +1144,9 @@ ul.sub-menu li > div.flex > img {
   align-items: center;
   padding: 2rem;
 }
+.grid-login .grid-p2 .ver-contraseña{
+  cursor: pointer;
+}
 .grid-login .grid-p2 div.login-span {
   text-align: center;
   margin-top: 2rem;
@@ -1661,12 +1664,13 @@ ul.sub-menu li > div.flex > img {
   padding: 2rem;
   color: #FFF;
   position: relative;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 .pedir-cita .grid article {
   width: 100%;
   background-color: rgba(197, 197, 197, 0.589);
   height: 100%;
+  border-radius: 0px 10px 10px 0px;
 }
 .pedir-cita .lista {
   display: flex;
@@ -1735,7 +1739,7 @@ ul.sub-menu li > div.flex > img {
 .pedir-cita .contenedor-form .paso3 {
   overflow: hidden;
   position: relative;
-  width: 700px;
+  width: 720px;
   min-height: 100%;
 }
 
@@ -1790,7 +1794,8 @@ ul.sub-menu li > div.flex > img {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
 }
 .pedir-cita .current-step {
   background-color: #ffffff; /* Fondo blanco */
@@ -1814,12 +1819,21 @@ ul.sub-menu li > div.flex > img {
 .ver-perfil .contenedor {
   margin: auto;
 }
+
 .ver-perfil .grid {
-  display: grid;
-  grid-template-columns: 30% 70%;
   border-radius: 10px;
   overflow: hidden;
 }
+
+@media (min-width: 768px) {
+  .ver-perfil .grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
 .ver-perfil .contenedor-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -1830,6 +1844,11 @@ ul.sub-menu li > div.flex > img {
   padding: 3rem;
   gap: 1rem;
 }
+.ver-perfil aside div img {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
 .ver-perfil aside div p {
   color: #FFF;
   text-align: center;
@@ -1848,10 +1867,14 @@ ul.sub-menu li > div.flex > img {
   flex-direction: column;
   gap: 2rem;
 }
-.ver-perfil .contenedor-article .row {
-  display: flex;
-  justify-content: space-between;
+
+@media (min-width: 992px) {
+  .ver-perfil .contenedor-article .row {
+    display: flex;
+    justify-content: space-between;
+  }
 }
+
 .ver-perfil .contenedor-article .row div {
   flex: 1;
 }
@@ -2063,9 +2086,10 @@ ul.sub-menu li > div.flex > img {
   width: 32px;
   border-radius: 50%;
 }
-.grid-dashboard .aside2 main .paciente #img-icono {
+.grid-dashboard .aside2 main .paciente .img-icono-paciente {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 .grid-dashboard .main1 {
   grid-area: top;
@@ -2165,4 +2189,170 @@ ul.sub-menu li > div.flex > img {
     box-shadow: 2px 2px 4px 0px rgba(51, 62, 99, 0.75);
     color: #FFF;
     cursor: pointer;
+}
+
+/*----------------------- DARK MODE -------------------------*/
+.header {
+  background: #fff;
+}
+
+.dark-mode {
+  background: #414141;
+  /* background: #2f2f2f; */
+}
+.dark-mode .header {
+  background: #000;
+  box-shadow: none;
+}
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode p, .dark-mode legend, .dark-mode label, .dark-mode li, .dark-mode a, .dark-mode span {
+  color: #FFF;
+}
+.dark-mode button.iniciar-sesion a {
+  color: #000;
+}
+.dark-mode footer {
+  background: #000;
+}
+
+.dark-mode .contenedor-mapa .grid-contacto {
+  background: #919191;
+  box-shadow: none;
+} 
+
+.dark-mode .grid-p2 .not-account p {
+  color: #fff;
+}
+
+.dark-mode .sub-menu,.dark-mode .contenedor-faqs-header, .dark-mode .legales-bg {
+  background: #919191;
+}
+
+.dark-mode.ver-perfil .contenedor-grid {
+  background: #919191;
+  box-shadow: none;
+}
+
+.dark-mode.pedir-cita .grid {
+  background: #5e5e5e;
+  box-shadow: none;
+}
+
+.dark-mode.pedir-cita .grid article {
+  background: #919191;
+}
+
+/*----------------------- FIN DARK MODE -------------------------*/
+
+/*--------------------------------------------- ESTILOS CHAT ------------------------------------------------*/
+.chat-page .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 350px)) minmax(250px, 850px);
+  grid-template-rows: minmax(300px, 800px);
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.chat-page .chat-abiertos {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #128C7E;
+}
+.chat-page .chat-abiertos div img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.chat-page .chat-abiertos div > div {
+  background-color: rgba(206, 206, 206, 0.4705882353);
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #a9a9a9;
+  cursor: pointer;
+}
+.chat-page .chat-abiertos div > div p {
+  font-size: 1.6rem;
+}
+.chat-page .chat-mensajes {
+  background-color: rgba(0, 0, 0, 0.205);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-page .chat-mensajes .chat {
+  background: white;
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.chat-page .chat-mensajes .chat header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #128C7E;
+  height: 10%;
+}
+.chat-page .chat-mensajes .chat header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.chat-page .chat-mensajes .chat header p {
+  font-size: 1.6rem;
+  color: #FFF;
+}
+.chat-page .chat-mensajes .chat header .iconos {
+  display: flex;
+  gap: 1rem;
+}
+.chat-page .chat-mensajes .chat header .iconos img {
+  width: 32px;
+  height: 32px;
+}
+.chat-page .chat-mensajes .chat footer {
+  height: 10%;
+  width: 100%;
+  background: #e1e1e1;
+  position: relative;
+}
+.chat-page .chat-mensajes .chat footer form {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.chat-page .chat-mensajes .chat footer input {
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+}
+.chat-page .chat-mensajes .chat footer button {
+  cursor: pointer;
+}
+.chat-page .chat-mensajes .chat main {
+  height: 80%;
+  overflow: auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+.chat-page .chat-mensajes .chat main p, .chat-page .chat-mensajes .chat main span {
+  font-size: 1.4rem;
+}
+.chat-page .chat-mensajes .chat main .left, .chat-page .chat-mensajes .chat main .right {
+  background: rgb(209, 209, 209);
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 35rem;
+}
+.chat-page .chat-mensajes .chat main .left {
+  align-self: flex-start;
+}
+.chat-page .chat-mensajes .chat main .right {
+  align-self: flex-end;
 }

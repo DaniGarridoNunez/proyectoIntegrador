@@ -174,9 +174,13 @@
                             <?php endif; ?>
                         </li>
                        
-                        <li class="icons-right dropdown">
+                        <li class="icons-right">
                             <div class="relative">
-                                <img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario">
+                                <?php if(empty($_SESSION['id'])) : ?>
+                                    <a href="/proyectoIntegrador/login.php"><img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario"></a>
+                                <?php else: ?>
+                                    <img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario">
+                                <?php endif; ?>
                                 <?php if(!empty($_SESSION)): ?>
                                 <ul class="sub-menu">
                                     <a href="/proyectoIntegrador/ver-perfil.php">
@@ -200,7 +204,7 @@
                                 <?php endif; ?>
                             </div> <!-- fin div usuario -->
                             <div>
-                                <img src="/proyectoIntegrador/build/img/darkMode.png" alt="Boton Dark Mode">
+                                <img src="/proyectoIntegrador/build/img/darkMode.png" alt="Boton Dark Mode" class="dark-mode-boton">
                             </div>
                         </li>
                     </ul>
@@ -216,7 +220,13 @@
                             <img class="darkModeImg" src="/proyectoIntegrador/build/img/darkMode.png" alt="Boton Dark Mode">
                         </div>
                         <div class="relative">
-                            <img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario">
+                            <?php if(empty($_SESSION['id'])) : ?>
+                                <a href="/proyectoIntegrador/login.php"><img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario"></a>
+                            <?php else: ?>
+                                <img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario">
+                            <?php endif; ?>
+
+                            <!-- <a href="/proyectoIntegrador/login.php"><img class="user-btn" src="/proyectoIntegrador/build/img/usuario.png" alt="logo usuario"></a> -->
                             <?php if(!empty($_SESSION)): ?>
                                 <ul class="sub-menu">
                                     <a href="/proyectoIntegrador/ver-perfil.php">

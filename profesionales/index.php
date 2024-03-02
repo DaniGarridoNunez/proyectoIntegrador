@@ -15,11 +15,6 @@
     $query = "SELECT * FROM citas WHERE id_profesional = {$_SESSION['id']} AND dia_cita < '{$fechaHoy}'";
     $resultadoCitas2 = mysqli_query($conexion, $query);
 
-    function dividirHora($hora) {
-        $dividido = explode(" ", $hora);
-        return $dividido;
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -163,7 +158,7 @@
                     <div class="paciente">
                     <img id="img-perfil" src="/proyectoIntegrador/fotoPerfil/<?php echo $paciente['foto']; ?>" alt="imagen perfil">
                     <span><?php echo $paciente['nombre'] . ' ' . $paciente['apellido']; ?></span>
-                    <img id="img-icono" src="/proyectoIntegrador/build/img/chatIcon.png" alt="icono chat" data-value="<?php echo $citas2['id']; ?>">
+                    <img class="img-icono-paciente" src="/proyectoIntegrador/build/img/chatIcon.png" alt="icono chat" data-value="<?php echo $citas2['id']; ?>">
                 </div>
                    
             <?php endwhile; ?>
@@ -178,6 +173,18 @@
 
 <?php include '../includes/templates/footer.php' ?>
 </div>
+<script>
+    // Selecciona todas las imágenes con la clase 'img-icono-paciente'
+const imagenes = document.querySelectorAll('.img-icono-paciente');
+
+// Itera sobre cada imagen y agrega el evento de clic
+imagenes.forEach(imagen => {
+    imagen.addEventListener('click', function(e){
+        let valor = imagen.getAttribute('data-value');
+        window.location.href = "/proyectoIntegrador/chat.php?id=" + valor;
+    });
+});
+</script>
 <script src="build/js/index.js"></script>
 </body>
 </html>
