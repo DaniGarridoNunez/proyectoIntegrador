@@ -1144,6 +1144,9 @@ ul.sub-menu li > div.flex > img {
   align-items: center;
   padding: 2rem;
 }
+.grid-login .grid-p2 .ver-contraseña{
+  cursor: pointer;
+}
 .grid-login .grid-p2 div.login-span {
   text-align: center;
   margin-top: 2rem;
@@ -1661,12 +1664,13 @@ ul.sub-menu li > div.flex > img {
   padding: 2rem;
   color: #FFF;
   position: relative;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
 }
 .pedir-cita .grid article {
   width: 100%;
   background-color: rgba(197, 197, 197, 0.589);
   height: 100%;
+  border-radius: 0px 10px 10px 0px;
 }
 .pedir-cita .lista {
   display: flex;
@@ -1791,6 +1795,7 @@ ul.sub-menu li > div.flex > img {
   object-fit: cover;
   object-position: center;
   border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
 }
 .pedir-cita .current-step {
   background-color: #ffffff; /* Fondo blanco */
@@ -2084,6 +2089,7 @@ ul.sub-menu li > div.flex > img {
 .grid-dashboard .aside2 main .paciente #img-icono {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 .grid-dashboard .main1 {
   grid-area: top;
@@ -2191,10 +2197,12 @@ ul.sub-menu li > div.flex > img {
 }
 
 .dark-mode {
-  background: #2f2f2f;
+  background: #414141;
+  /* background: #2f2f2f; */
 }
 .dark-mode .header {
   background: #000;
+  box-shadow: none;
 }
 .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode p, .dark-mode legend, .dark-mode label, .dark-mode li, .dark-mode a, .dark-mode span {
   color: #FFF;
@@ -2207,11 +2215,30 @@ ul.sub-menu li > div.flex > img {
 }
 
 .dark-mode .contenedor-mapa .grid-contacto {
-  background: #484848;
+  background: #919191;
+  box-shadow: none;
 } 
 
 .dark-mode .grid-p2 .not-account p {
   color: #fff;
+}
+
+.dark-mode .sub-menu,.dark-mode .contenedor-faqs-header, .dark-mode .legales-bg {
+  background: #919191;
+}
+
+.dark-mode.ver-perfil .contenedor-grid {
+  background: #919191;
+  box-shadow: none;
+}
+
+.dark-mode.pedir-cita .grid {
+  background: #5e5e5e;
+  box-shadow: none;
+}
+
+.dark-mode.pedir-cita .grid article {
+  background: #919191;
 }
 
 /*----------------------- FIN DARK MODE -------------------------*/
