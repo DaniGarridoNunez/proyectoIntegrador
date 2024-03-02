@@ -176,50 +176,50 @@
 
         <section class="espaciado">
             <div class="contenedor">
-                <h2>Nuestros casos de éxito</h2>
+                <h2>Nuestros casos de exito</h2>
                 <div class="grid-casos-exito">
 
                     <div class="card">
                         <div>
-                            <img src="build/img/profile-img.jpg" alt="foto perfil">
+                            <img src="fotoPerfil/paciente1.jpg" alt="foto perfil">
                         </div>
                         <div>
-                            <h3>Margaret Phelim</h3>
-                            <p>Tengo problemas de sobrepeso, ahora llevo una dieta saludable y hago ejercicio, me encuentro mejor que nunca!</p>
+                            <h3>Fernando Alonso</h3>
+                            <p>El psicologo Eric Hernandez es genial me ayudo mucho durante este ultimo año</p>
                         </div>
                     </div> <!-- .card -->
 
                     <div class="card">
                         <div>
-                            <img src="build/img/profile-img.jpg" alt="foto perfil">
+                            <img src="fotoPerfil/paciente2.jpg" alt="foto perfil">
                         </div>
                         <div>
-                            <h3>Margaret Phelim</h3>
-                            <p>Tengo problemas de sobrepeso, ahora llevo una dieta saludable y hago ejercicio, me encuentro mejor que nunca!</p>
+                            <h3>Paolo Maldini</h3>
+                            <p>El nutricionista Luis Jerez me ayudo a conseguir mi objetivo de peso, es muy bueno, lo recomiendo a todo el mundo</p>
                         </div>
                     </div> <!-- .card -->
 
                     <div class="card">
                         <div>
-                            <img src="build/img/profile-img.jpg" alt="foto perfil">
+                            <img src="fotoPerfil/paciente3.jpg" alt="foto perfil">
                         </div>
                         <div>
-                            <h3>Margaret Phelim</h3>
-                            <p>Tengo problemas de sobrepeso, ahora llevo una dieta saludable y hago ejercicio, me encuentro mejor que nunca!</p>
+                            <h3>Coby Botsford</h3>
+                            <p>Gracias al psicólogo Eric Hernandez estoy mejorando mucho</p>
                         </div>
                     </div> <!-- .card -->
 
                     <div class="card">
                         <div>
-                            <img src="build/img/profile-img.jpg" alt="foto perfil">
+                            <img src="fotoPerfil/default.jpg" alt="foto perfil">
                         </div>
                         <div>
                             <h3>Margaret Phelim</h3>
-                            <p>Tengo problemas de sobrepeso, ahora llevo una dieta saludable y hago ejercicio, me encuentro mejor que nunca!</p>
+                            <p>Se nota que el nutricionista Enrique Fernandez tiene muchos años de experiencia</p>
                         </div>
                     </div> <!-- .card -->
-
                 </div> <!-- .grid-casos-exito -->
+                <a href="/proyectoIntegrador/contacto.php"><button class="casos-exito-btn">Ver todos</button></a>
             </div>
         </section>
 
