@@ -161,7 +161,8 @@
                     <div class="paciente">
                     <img id="img-perfil" src="/proyectoIntegrador/fotoPerfil/<?php echo $paciente['foto']; ?>" alt="imagen perfil">
                     <span><?php echo $paciente['nombre'] . ' ' . $paciente['apellido']; ?></span>
-                    <img class="img-icono-paciente" src="/proyectoIntegrador/build/img/chatIcon.png" alt="icono chat" data-value="<?php echo $citas2['id']; ?>">
+                    <img class="img-icono-paciente" src="/proyectoIntegrador/build/img/chatIcon.png" alt="icono chat" data-value="<?php echo $citas2['id']; ?>" data-value2="<?php echo $citas2['id_paciente']; ?>">
+
                 </div>
                    
             <?php endwhile; ?>
@@ -184,7 +185,8 @@ const imagenes = document.querySelectorAll('.img-icono-paciente');
 imagenes.forEach(imagen => {
     imagen.addEventListener('click', function(e){
         let valor = imagen.getAttribute('data-value');
-        window.location.href = "/proyectoIntegrador/chat.php?id=" + valor;
+        let valor2 = imagen.getAttribute('data-value2');
+        window.location.href = "/proyectoIntegrador/chat.php?id=" + valor + "&id-paciente=" + valor2;
     });
 });
 </script>
