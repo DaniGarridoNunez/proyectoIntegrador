@@ -85,43 +85,43 @@
 
     <main>
         <div class="profesionales-bg">
-            <div class="contenedor">
+            <div style="overflow: hidden;" class="contenedor">
             <h1>Nuestros profesionales</h1>
-                <div class="p-cards" style="display: none;">
+                <div class="p-cards">
                     <div class="p-card">
                         <div class="p-foto">
-                            <img src="build/img/profile-img.jpg" alt="foto perfil profesional">
+                            <img src="fotoPerfil/profesional1.jpg" alt="foto perfil profesional">
                         </div>
                         <div>
-                            <p>Jasmine Petrova</p>
+                            <p>Luis Jerez</p>
+                            <p>Nutricionista</p>
+                        </div>
+                    </div> <!-- .p-card -->
+                    <div class="p-card">
+                        <div class="p-foto">
+                            <img src="fotoPerfil/profesional2.jpg" alt="foto perfil profesional">
+                        </div>
+                        <div>
+                            <p>Eric Hernandez</p>
+                            <p>Nutricionista</p>
+                        </div>
+                    </div> <!-- .p-card -->
+                    <div class="p-card">
+                        <div class="p-foto">
+                            <img src="fotoPerfil/profesional3.jpg" alt="foto perfil profesional">
+                        </div>
+                        <div>
+                            <p>Angela Pérez</p>
                             <p>Psicóloga</p>
                         </div>
                     </div> <!-- .p-card -->
                     <div class="p-card">
                         <div class="p-foto">
-                            <img src="build/img/profile-img.jpg" alt="foto perfil profesional">
+                            <img src="fotoPerfil/profesional4.jpg" alt="foto perfil profesional">
                         </div>
                         <div>
-                            <p>Jasmine Petrova</p>
-                            <p>Psicóloga</p>
-                        </div>
-                    </div> <!-- .p-card -->
-                    <div class="p-card">
-                        <div class="p-foto">
-                            <img src="build/img/profile-img.jpg" alt="foto perfil profesional">
-                        </div>
-                        <div>
-                            <p>Jasmine Petrova</p>
-                            <p>Psicóloga</p>
-                        </div>
-                    </div> <!-- .p-card -->
-                    <div class="p-card">
-                        <div class="p-foto">
-                            <img src="build/img/profile-img.jpg" alt="foto perfil profesional">
-                        </div>
-                        <div>
-                            <p>Jasmine Petrova</p>
-                            <p>Psicóloga</p>
+                            <p>Mario Rodríguez</p>
+                            <p>Psicólogo</p>
                         </div>
                     </div> <!-- .p-card -->
                 </div> <!-- .p-cards -->

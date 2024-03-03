@@ -377,6 +377,12 @@ session_start();
                 <div class="text">Mario Rodriguez <br><span style="font-size: 14px;">Cinco años de experiencia licenciado en la Universidad Europea de Madrid</span></div>
             </div>
         </div>
+        <div class="cartas">
+            <img src="fotoPerfil/profesional5.jpg" alt="Imagen" />
+            <div class="overlay">
+                <div class="text">Mario Rodriguez <br><span style="font-size: 14px;">Cinco años de experiencia licenciado en la Universidad Europea de Madrid</span></div>
+            </div>
+        </div>
     </div>
 
 

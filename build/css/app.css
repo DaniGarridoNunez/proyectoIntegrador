@@ -939,6 +939,7 @@ ul.sub-menu li > div.flex > img {
   align-items: center;
   min-height: 15rem;
   max-width: 25rem;
+  min-width: 18rem;
 }
 .p-cards .p-card div.p-foto {
   position: absolute;
@@ -1055,6 +1056,11 @@ ul.sub-menu li > div.flex > img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem; /* Espacio entre las columnas */
+}
+@media (min-width: 768px) {
+    .grid-casos-exito {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 .grid-casos-exito .card {
   display: grid;
