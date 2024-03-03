@@ -28,7 +28,7 @@
                         <div>
                             <p>Aviso Legal</p>
                             <div class="legal-img">
-                                <a href="aviso-legal.html">
+                                <a href="aviso-legal.php">
                                     <img src="build/img/aviso_legal.png" alt="aviso legal imagen">
                                 </a>
                             </div>
@@ -37,7 +37,7 @@
                         <div>
                             <p>Política de Privacidad</p>
                             <div class="legal-img">
-                                <a href="politica-privacidad.html">
+                                <a href="politica-privacidad.php">
                                     <img src="build/img/politica_privacidad.png" alt="politica privacidad imagen">
                                 </a>
                             </div>
@@ -46,7 +46,7 @@
                         <div>
                             <p>Política de Cookies</p>
                             <div class="legal-img">
-                                <a href="politica-cookies.html">
+                                <a href="politica-cookies.php">
                                     <img src="build/img/politica_cookies.png" alt="política cookies imagen">
                                 </a>
                             </div>
