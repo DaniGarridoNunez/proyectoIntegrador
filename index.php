@@ -219,7 +219,7 @@
                         </div>
                     </div> <!-- .card -->
                 </div> <!-- .grid-casos-exito -->
-                <a href="/proyectoIntegrador/contacto.php"><button class="casos-exito-btn">Ver todos</button></a>
+                <a href="/proyectoIntegrador/testimonios.php"><button class="casos-exito-btn">Ver todos</button></a>
             </div>
         </section>
 
