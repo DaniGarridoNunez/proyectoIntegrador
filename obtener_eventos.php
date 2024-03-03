@@ -15,7 +15,8 @@ if (mysqli_num_rows($resultado) > 0) {
             'title' => 'Cita', // Siempre será 'Cita'
             'start' => date('Y-m-d\TH:i:s', strtotime($cita['dia_cita'])), // Convertimos la fecha al formato ISO8601
             'display' => 'block',
-            'color' => '#166D9E'
+            'color' => '#166D9E',
+            'url' => "/proyectoIntegrador/chat.php?id={$cita['id']}&id-profesional={$cita['id_profesional']}"
         );
         // Agregamos la cita transformada al array de citas
         $mostrarCitas[] = $citaTransformada;
